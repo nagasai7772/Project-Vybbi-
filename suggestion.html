@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Search</title>
+    <style>
+        /* Style the suggestion list */
+        #suggestions {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        #suggestions li {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 5px;
+            border: 1px solid #ccc;
+            margin: 5px 0;
+        }
+
+        #suggestions li img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        #suggestions li:hover {
+            background-color: #f0f0f0;
+        }
+
+        #SongAudio {
+            width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="search" placeholder="Search for songs, movies, or artists..." oninput="getSuggestions()">
+    
+    <!-- Suggestions list -->
+    <ul id="suggestions"></ul>
+
+    <audio id="SongAudio" controls></audio>
+    <img id="Img" alt="Album Image" style="max-width: 200px; margin-top: 20px;">
+
+    <script>
+        let search = document.getElementById("search");
+        let SongAudio = document.getElementById("SongAudio");
+        let Img = document.getElementById("Img");
+        let suggestionsList = document.getElementById("suggestions");
+
+        async function getSuggestions() {
+            const query = search.value.trim();
+            if (query.length === 0) {
+                suggestionsList.innerHTML = ''; // Clear suggestions if search is empty
+                return;
+            }
+
+            // Fetch songs, movies, or artists based on the query
+            let response = await fetch(`https://vybbii-api.onrender.com/songs`);
+            let data = await response.json();
+            
+            suggestionsList.innerHTML = ''; // Clear previous suggestions
+
+            if (data && data.length > 0) {
+                // Loop through the fetched data and display suggestions
+                data.forEach(song => {
+                    const li = document.createElement("li");
+                    li.innerHTML = `
+                        <img src="${song.img}" alt="${song.title}">
+                        <span>${song.title}</span>
+                    `;
+                    li.onclick = () => playSong(song.audioUrl, song.img);
+                    suggestionsList.appendChild(li);
+                });
+            } else {
+                // If no results, show a message
+                suggestionsList.innerHTML = `<li>No results found</li>`;
+            }
+        }
+
+        function playSong(audioUrl, img) {
+            SongAudio.src = audioUrl;  // Set the audio URL to the <audio> element
+            Img.src = img;      // Set the album image to the <img> element
+            SongAudio.play();          // Start playing the song
+        }
+playSong()
+</script>
+</body>
+</html>

@@ -1,0 +1,996 @@
+.side_section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-left: 10px;
+  width: 400px;
+  background-color: rgba(41, 37, 37, 0.675);
+  border-radius: 10px;
+  height: auto;
+  padding-right: 10px;
+  /* position: sticky; */
+}
+#side_sec {
+  display: flex;
+  justify-content: space-between;
+  /* gap: 200px; */
+  align-items: center;
+  padding: 20px;
+  color: white;
+  margin-left: 20px;
+}
+#library {
+  color: hsla(0, 0%, 100%, 0.467);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20px;
+}
+.playlist {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 5px;
+  color: white;
+  background-color: hsl(240, 2%, 18%);
+  width: 300px;
+  padding: 30px;
+  border-radius: 10px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin-left: 20px;
+}
+#Home_sec {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+  width: auto;
+  /* height: 50vh; */
+}
+.create_btn {
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 15px;
+  font-weight: bolder;
+  background-color: white;
+}
+.create_btn:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.podcast {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 5px;
+  width: 300px;
+  color: white;
+  background-color: hsl(240, 2%, 18%);
+  padding: 30px;
+  border-radius: 10px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin-left: 20px;
+}
+.browse_btn {
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 15px;
+  font-weight: bolder;
+  background-color: white;
+}
+.browse_btn:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.647);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+a:hover {
+  text-decoration: underline;
+}
+.lang {
+  border: 1px solid white;
+  outline: none;
+  width: 100px;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: hsl(240, 2%, 18%);
+  color: white;
+  font-size: 15px;
+  font-weight: bolder;
+  margin-left: 20px;
+}
+#poster,
+#songAudio,
+#song_Sec {
+  display: none;
+}
+.lang:hover {
+  border-radius: 3px solid white;
+  border-radius: 20px;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.first_line,
+.second_line {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-left: 20px;
+}
+.Cookies {
+  margin-left: 20px;
+}
+#main_sec {
+  width: auto;
+  height: 40%;
+  background-color: hsla(0, 2%, 24%, 0.488);
+  padding: 10px;
+  border-radius: 10px;
+  overflow-y: scroll;
+}
+
+.Browse_img {
+  height: 150px;
+  width: 250px;
+  border-radius: 10px;
+  /* padding: 4px; */
+}
+.Browse {
+  display: grid;
+  grid-template-columns: repeat(4, 24.5%); /* 4 columns */
+  gap: 10px; /* smaller gap between items */
+  padding: 10px; /* optional padding around the grid */
+  display: none;
+}
+
+.space {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.Popular {
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.Popular:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.showall {
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 15px;
+}
+.showall:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.Artist_sec {
+  display: flex;
+  gap: 10px;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.Artist {
+  height: 150px;
+  width: 150px;
+  border-radius: 100px;
+  position: relative;
+}
+.playbutton {
+  border-radius: 100px;
+  height: 50px;
+  width: 50px;
+  float: right;
+  margin-top: -40px;
+
+  opacity: 0;
+}
+#Artist_1:hover .playbutton {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Artist_2:hover .playbutton {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Artist_3:hover .playbutton {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Artist_4:hover .playbutton {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Artist_5:hover .playbutton {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Artist_6:hover .playbutton {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Artist_7:hover .playbutton {
+  opacity: 1;
+
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Artist_1,
+#Artist_2,
+#Artist_3,
+#Artist_4,
+#Artist_5,
+#Artist_6,
+#Artist_7 {
+  height: 200px;
+  width: 155px;
+}
+#Artist_1:hover,
+#Artist_2:hover,
+#Artist_3:hover,
+#Artist_4:hover,
+#Artist_5:hover,
+#Artist_6:hover,
+#Artist_7:hover {
+  background-color: hsla(0, 5%, 22%, 0.567);
+  height: 200px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.Artist_sec2 {
+  display: flex;
+  gap: 10px;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+#Artist_8:hover .playbutton {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Artist_9:hover .playbutton {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Artist_10:hover .playbutton {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Artist_11:hover .playbutton {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Artist_12:hover .playbutton {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Artist_13:hover .playbutton {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Artist_14:hover .playbutton {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+
+#Artist_8,
+#Artist_9,
+#Artist_10,
+#Artist_11,
+#Artist_12,
+#Artist_13,
+#Artist_14 {
+  height: 200px;
+  width: 155px;
+}
+#Artist_8:hover,
+#Artist_9:hover,
+#Artist_10:hover,
+#Artist_11:hover,
+#Artist_12:hover,
+#Artist_13:hover,
+#Artist_14:hover {
+  background-color: hsla(0, 5%, 22%, 0.567);
+  height: 200px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.Artist_sec3 {
+  display: flex;
+  gap: 10px;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+#Artist_15,
+#Artist_16,
+#Artist_17,
+#Artist_18,
+#Artist_19,
+#Artist_20 {
+  height: 200px;
+  width: 155px;
+}
+#Artist_15:hover,
+#Artist_16:hover,
+#Artist_17:hover,
+#Artist_18:hover,
+#Artist_19:hover,
+#Artist_20:hover {
+  background-color: hsla(0, 5%, 22%, 0.567);
+  height: 200px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#Artist_15:hover .playbutton {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Artist_16:hover .playbutton {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Artist_17:hover .playbutton {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Artist_18:hover .playbutton {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Artist_19:hover .playbutton {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Artist_20:hover .playbutton {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+.Artist_sec2,
+.Artist_sec3 {
+  display: none;
+}
+.Album {
+  height: 150px;
+  width: 150px;
+  border-radius: 10px;
+  position: relative;
+}
+.Album_sec1 {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.Album_button {
+  border-radius: 100px;
+  height: 50px;
+  width: 50px;
+  float: right;
+  margin-top: -40px;
+  opacity: 0;
+}
+#Album_1:hover .Album_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Album_2:hover .Album_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Album_3:hover .Album_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Album_4:hover .Album_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Album_5:hover .Album_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Album_6:hover .Album_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Album_7:hover .Album_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Album_1,
+#Album_2,
+#Album_3,
+#Album_4,
+#Album_5,
+#Album_6,
+#Album_7 {
+  height: 240px;
+  width: 155px;
+}
+#Album_1:hover,
+#Album_2:hover,
+#Album_3:hover,
+#Album_4:hover,
+#Album_5:hover,
+#Album_6:hover,
+#Album_7:hover {
+  background-color: hsla(0, 2%, 24%, 0.797);
+  height: 240px;
+  width: 155px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.Album_sec2 {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+#Album_8:hover .Album_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Album_9:hover .Album_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Album_10:hover .Album_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Album_11:hover .Album_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Album_12:hover .Album_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Album_13:hover .Album_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Album_14:hover .Album_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Album_8,
+#Album_9,
+#Album_10,
+#Album_11,
+#Album_12,
+#Album_13,
+#Album_14 {
+  height: 240px;
+  width: 155px;
+}
+#Album_8:hover,
+#Album_9:hover,
+#Album_10:hover,
+#Album_11:hover,
+#Album_12:hover,
+#Album_13:hover,
+#Album_14:hover {
+  background-color: hsla(0, 2%, 24%, 0.797);
+  height: 240px;
+  width: 155px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.Album_sec3 {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+#Album_15:hover .Album_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Album_16:hover .Album_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Album_17:hover .Album_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Album_18:hover .Album_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Album_19:hover .Album_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Album_20:hover .Album_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Album_15,
+#Album_16,
+#Album_17,
+#Album_18,
+#Album_19,
+#Album_20 {
+  height: 240px;
+  width: 155px;
+}
+#Album_15:hover,
+#Album_16:hover,
+#Album_17:hover,
+#Album_18:hover,
+#Album_19:hover,
+#Album_20:hover {
+  background-color: hsla(0, 2%, 24%, 0.797);
+  height: 240px;
+  width: 155px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.space {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Popular {
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.Popular:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.showall2 {
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 15px;
+}
+.showall2:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#Album_Sec2,
+#Album_Sec3 {
+  display: none;
+}
+.Radio {
+  height: 150px;
+  width: 150px;
+  border-radius: 10px;
+  position: relative;
+  /* overflow: hidden; */
+}
+.Radio_sec1 {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.Radio_button {
+  border-radius: 100px;
+  height: 50px;
+  width: 50px;
+  float: right;
+  margin-top: -40px;
+  opacity: 0;
+}
+#Radio_1:hover .Radio_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Radio_2:hover .Radio_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Radio_3:hover .Radio_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Radio_4:hover .Radio_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Radio_5:hover .Radio_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Radio_6:hover .Radio_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Radio_7:hover .Radio_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Radio_1,
+#Radio_2,
+#Radio_3,
+#Radio_4,
+#Radio_5,
+#Radio_6,
+#Radio_7 {
+  height: 210px;
+  width: 155px;
+}
+#Radio_1:hover,
+#Radio_2:hover,
+#Radio_3:hover,
+#Radio_4:hover,
+#Radio_5:hover,
+#Radio_6:hover,
+#Radio_7:hover {
+  background-color: rgb(31, 26, 26);
+  height: 210px;
+  width: 155px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.Radio_sec2 {
+  display: flex;
+  gap: 10px;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  cursor: pointer;
+}
+#Radio_8:hover .Radio_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Radio_9:hover .Radio_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Radio_10:hover .Radio_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Radio_11:hover .Radio_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Radio_12:hover .Radio_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Radio_13:hover .Radio_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Radio_14:hover .Radio_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Radio_8,
+#Radio_9,
+#Radio_10,
+#Radio_11,
+#Radio_12,
+#Radio_13,
+#Radio_14 {
+  height: 210px;
+  width: 155px;
+}
+#Radio_8:hover,
+#Radio_9:hover,
+#Radio_10:hover,
+#Radio_11:hover,
+#Radio_12:hover,
+#Radio_13:hover,
+#Radio_14:hover {
+  background-color: hsla(0, 2%, 24%, 0.797);
+  height: 210px;
+  width: 155px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.Radio_sec3 {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+#Radio_15:hover .Radio_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Radio_16:hover .Radio_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Radio_17:hover .Radio_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Radio_18:hover .Radio_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Radio_19:hover .Radio_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Radio_20:hover .Radio_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Radio_15,
+#Radio_16,
+#Radio_17,
+#Radio_18,
+#Radio_19,
+#Radio_20 {
+  height: 210px;
+  width: 160px;
+}
+#Radio_15:hover,
+#Radio_16:hover,
+#Radio_17:hover,
+#Radio_18:hover,
+#Radio_19:hover,
+#Radio_20:hover {
+  background-color: hsla(0, 2%, 24%, 0.797);
+  height: 210px;
+  width: 160px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.Radio_sec2,
+.Radio_sec3 {
+  display: none;
+}
+.showall3 {
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 15px;
+}
+.showall3:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.Charts_sec {
+  display: flex;
+  gap: 10px;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  cursor: pointer;
+}
+.Chart {
+  height: 150px;
+  width: 150px;
+  border-radius: 10px;
+  /* position: relative; */
+}
+.Chart_button {
+  border-radius: 100px;
+  height: 50px;
+  width: 50px;
+  float: right;
+  margin-top: -40px;
+  opacity: 0;
+}
+#Chart_1:hover .Chart_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Chart_2:hover .Chart_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Chart_3:hover .Chart_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Chart_4:hover .Chart_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Chart_5:hover .Chart_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Chart_6:hover .Chart_button {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Chart_1,
+#Chart_2,
+#Chart_3,
+#Chart_4,
+#Chart_5,
+#Chart_6 {
+  height: 210px;
+  width: 160px;
+}
+#Chart_1:hover,
+#Chart_2:hover,
+#Chart_3:hover,
+#Chart_4:hover,
+#Chart_5:hover,
+#Chart_6:hover {
+  background-color: hsla(0, 2%, 24%, 0.797);
+  height: 210px;
+  width: 160px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.Editor_sec {
+  display: flex;
+  gap: 10px;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  cursor: pointer;
+}
+.Editor_btn {
+  border-radius: 100px;
+  height: 50px;
+  width: 50px;
+  float: right;
+  margin-top: -40px;
+  opacity: 0;
+}
+
+#Editor_1:hover .Editor_btn {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Editor_2:hover .Editor_btn {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Editor_3:hover .Editor_btn {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Editor_4:hover .Editor_btn {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Editor_5:hover .Editor_btn {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+#Editor_6:hover .Editor_btn {
+  opacity: 1;
+  transition: ease 0.3s;
+  transform: translateY(-10px);
+}
+
+#Editor_1,
+#Editor_2,
+#Editor_3,
+#Editor_4,
+#Editor_5,
+#Editor_6 {
+  height: 210px;
+  width: 160px;
+}
+#Editor_1:hover,
+#Editor_2:hover,
+#Editor_3:hover,
+#Editor_4:hover,
+#Editor_5:hover,
+#Editor_6:hover {
+  background-color: hsla(0, 2%, 24%, 0.797);
+  height: 210px;
+  width: 160px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#footer_sec {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  cursor: pointer;
+  line-height: 30px;
+}
+
+.footer_icons {
+  display: flex;
+  gap: 30px;
+  font-size: 25px;
+}
+.conditions {
+  display: flex;
+  gap: 20px;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  cursor: pointer;
+}
+.allcond {
+  display: flex;
+  /* gap:20px; */
+  justify-content: space-around;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  cursor: pointer;
+}
+.preview {
+  color: white;
+  /* position: absolute; */
+  height: 200px;
+}

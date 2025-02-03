@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vybbii</title>
+    <link
+      rel="shortcut icon"
+      href="./Allimages/main logo.jpg"
+      type="image/x-icon"
+    />
+    <style>
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* background-color: #141414; */
+    background-image: url(./Allimages/signup2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}
+
+form {
+    background: rgba(0, 0, 0, 0.5); /* Transparent black background */
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    padding: 40px;
+    border-radius: 15px;
+    width: 450px;
+    color: #00FF00;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+label  {
+    font-size: 14px;
+    color: #00FF00; /* Green color */
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #00FF00; /* Green border */
+    background-color: rgba(0, 0, 0, 0.3); /* Transparent black background */
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="email"]:focus,
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #00FF00;
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly darker on focus */
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+button {
+    background-color: #00FF00; /* Green button */
+    color: black;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #00cc00; /* Slightly darker green on hover */
+    transform: scale(1.1);
+    transition: ease 0.4s;
+}
+#Email_error,#Pass_error,#Repass_error,#Name_error
+{
+    display: none;
+}
+.Logins
+{
+    display: flex;
+    justify-content: space-around;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover
+{
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    form {
+        width: 90%; /* Make form width 90% of the screen */
+        padding: 20px; /* Reduced padding for smaller screens */
+    }
+
+    input[type="email"],
+    input[type="text"],
+    input[type="password"],
+    button {
+        font-size: 14px; /* Smaller font for mobile view */
+        padding: 12px; /* Adjust padding for better mobile fit */
+    }
+    #Email_error,#Pass_error,#Repass_error
+{
+    display: none;
+}
+.Logins
+{
+    display: flex;
+    justify-content: space-around;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover
+{
+    text-decoration: underline;
+}
+}
+
+    </style>
+  </head>
+
+  <body>
+    <form action="">
+        <h2 >Sign Up</h2> <br>
+        <label for="">Name:</label>
+        <input type="text" name="" id="Name" placeholder="Enter Name">
+        <span id="Name_error">Enter Your Name</span>
+      <label for="">Email:</label>
+      <input type="email" name="" id="Email"  placeholder="Enter Your Email"/>
+      <span id="Email_error">Enter Email</span>
+      <label for="">Enter Password</label>
+      <input type="password" name="" id="Password"  placeholder="Enter Password"/>
+      <span id="Pass_error">Enter Password</span>
+      <!-- <label for="">Check Password</label> -->
+      <!-- <input type="checkbox" name="" id=""> -->
+      <label for="">Re-Enter Password</label>
+      <input type="password" name="" id="Re-Enter" placeholder="Re-Enter Password"/>
+      <!-- <label for="">Check Password</label> -->
+      <input type="checkbox" name="" id="Check_box" ><span>Check Password</span><br>
+       <!-- <button onclick="hide()">dj</button> -->
+      <span id="Repass_error">Passwords Doesn't Match</span>
+      <br><br>
+      <button type="button" id="Signup_btn" >Sign up</button>
+      <br> <br>
+      <div class="Logins"><p >Have an Account ? <a href="./Login.html">Login </a></p> <a href="./index1.html">Guest Login</a></div>
+    </form>
+    <!-- <script type="" src="./Signup.js"></script> -->
+     <script type="module" src="./Signup.js"></script>
+
+      
+  </body>
+</html>

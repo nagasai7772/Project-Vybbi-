@@ -1,0 +1,532 @@
+/***********************************LIBRARY SECTION**************************/
+body
+{
+background-color:black;
+color: white;
+
+
+}
+@media screen and (min-width: 0px) and (max-width: 320px) {
+  .main_library_section {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  .library_section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .profile_pic {
+    height: 35px;
+    width: 35px;
+    border: 2px soild black;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 100%;
+  }
+  .Name_section {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 20px;
+  }
+  .search_icon
+  {
+    font-size: 25px;
+  }
+  .Plus_icon
+  {
+    font-size: 25px;
+  }
+  .sections_ {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .playlist:active {
+    background-color:rgb(61, 202, 61);
+    cursor: pointer;
+    color: black;
+    
+  }
+  
+  .Artist:active{
+    background-color: rgb(61, 202, 61);
+    cursor: pointer;
+    color: black;
+  }
+  .playlist {
+    border: 2px solid white;
+    /* border-color: white; */
+    border-radius: 100px;
+    padding: 7px;
+    font-family: sans-serif;
+  }
+
+  .Artist {
+    border: 2px solid white;
+    border-radius: 100px;
+    padding: 7px;
+    font-family: sans-serif;
+  }
+  .Artist_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: sans-serif;
+    gap: 20px;
+  }
+  .Liked_section
+  {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+  }
+  .Liked {
+    height: 60px;
+    width: 60px;
+  }
+  .Artist_1 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .singer_1 {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 100%;
+  }
+  .Artist_2 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .singer_2 {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 100%;
+  }
+  .Artist_3 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .singer_3 {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    object-position: center;
+  }
+  .Artist_4 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .singer_4 {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    object-position: center;
+    
+    
+    border-radius: 100%;
+  }
+  .Artist_5 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .singer_5 {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 100%;
+  }
+  .Artist_6
+  {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+  }
+  .singer_6
+  {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 100%;
+
+  }
+  .footer_icons
+  {
+    display: flex;
+    text-align: center;
+    justify-content: space-around ;
+    align-items: center;
+    font-size: 25px;
+    line-height: 10px;
+  }
+  .footer_name
+  {
+    font-size: 10px;
+  }
+}
+@media screen and (min-width:321px) and (max-width:376px)
+{
+  .main_library_section {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  .library_section {
+    display: flex;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    justify-content: space-around;
+  }
+  .profile_pic {
+    height: 40px;
+    width: 40px;
+    /* border: 2px soild black; */
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 100%;
+  }
+  .Name_section {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 25px;
+  }
+  .search_icon
+  {
+    font-size: 30px;
+  }
+  .Plus_icon
+  {
+    font-size: 30px;
+  }
+  .sections_ {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .playlist:active {
+    background-color:rgb(61, 202, 61);
+    cursor: pointer;
+    color: black;
+  }
+  .Artist:active{
+    background-color: rgb(61, 202, 61);
+    cursor: pointer;
+    color: black;
+  }
+  .playlist {
+    border: 2px solid white;
+    border-radius: 100px;
+    padding: 10px;
+    font-family: sans-serif;
+    font-size: 17px;
+  }
+  
+  .Artist {
+    border: 2px solid white;
+    
+    
+    border-radius: 100px;
+    padding: 10px;
+    font-family: sans-serif;
+    font-size: 17px;
+  }
+  .Artist_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: sans-serif;
+    gap: 20px;
+  }
+  .Liked_section
+  {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+  }
+  .Liked {
+    height: 60px;
+    width: 60px;
+  }
+  .Artist_1 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .singer_1 {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 100%;
+  }
+  .Artist_2 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .singer_2 {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 100%;
+  }
+  .Artist_3 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .singer_3 {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    object-position: center;
+  }
+  .Artist_4 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .singer_4 {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    object-position: center;
+    
+    
+    border-radius: 100%;
+  }
+  .Artist_5 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .singer_5 {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 100%;
+  }
+  .Artist_6
+  {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+  }
+  .singer_6
+  {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 100%;
+
+  }
+  .footer_icons
+  {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    font-size: 28px;
+    line-height: 10px;
+  }
+  .footer_name
+  {
+    font-size: 12px;
+  }
+}
+@media screen and (min-width:377px) and (max-width:475px) 
+{
+  .main_library_section {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  .library_section {
+    display: flex;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    justify-content: space-around;
+  }
+  .profile_pic {
+    height: 50px;
+    width: 50px;
+    border: 2px soild black;
+    object-fit: cover ;
+    object-position: center center;
+    -o-object-fit: cover;
+    border-radius: 100%;
+  }
+  .Name_section {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 25px;
+  }
+  .search_icon
+  {
+    font-size: 35px;
+  }
+  .Plus_icon
+  {
+    font-size: 45px;
+  }
+  .sections_ {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .playlist:active {
+    background-color:rgb(61, 202, 61);
+    cursor: pointer;
+    color: black;
+  }
+  .Artist:active{
+    background-color: rgb(61, 202, 61);
+    cursor: pointer;
+    color: black;
+  }
+  .playlist {
+    border: 2px solid white;
+    
+    border-radius: 100px;
+    padding: 10px;
+    font-family: sans-serif;
+    font-size: 17px;
+  }
+
+  .Artist {
+    border: 2px solid white;
+        border-radius: 100px;
+    padding: 10px;
+    font-family: sans-serif;
+    font-size: 17px;
+  }
+  .Artist_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: sans-serif;
+    gap: 20px;
+  }
+  .Liked_section
+  {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+  }
+  .Liked {
+    height: 60px;
+    width: 60px;
+  }
+  .Artist_1 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .singer_1 {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 100%;
+  }
+  .Artist_2 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .singer_2 {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 100%;
+  }
+  .Artist_3 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .singer_3 {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    object-position: center;
+  }
+  .Artist_4 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .singer_4 {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    object-position: center;
+    
+    
+    border-radius: 100%;
+  }
+  .Artist_5 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .singer_5 {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 100%;
+  }
+  .Artist_6
+  {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+  }
+  .singer_6
+  {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 100%;
+
+  }
+  .footer_icons
+  {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+    line-height: 15px;
+  }
+  .footer_name
+  {
+    font-size: 14px;
+  }
+}

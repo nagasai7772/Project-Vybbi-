@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Song Playlist with Search</title>
+  <style>
+    #playlistSection, #searchResults {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    .song-item, .playlist-song {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .song-item img, .playlist-song img {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+    .song-item button {
+      margin-left: auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="playerSection">
+    <h1>Now Playing</h1>
+    <img id="poster" src="" alt="Song Poster" width="150">
+    <h2 id="SongName">Song: </h2>
+    <h3 id="Artist">Artist: </h3>
+    <h4 id="albumName">Album: </h4>
+    <audio id="audioPlayer" controls></audio>
+    <button id="addToPlaylistBtn">Add to Playlist</button>
+  </div>
+
+  <div id="searchSection">
+    <h2>Search Songs</h2>
+    <input type="text" id="searchBar" placeholder="Search for songs..." />
+    <div id="searchResults"></div>
+  </div>
+
+  <div id="playlistSection">
+    <h2>My Playlist</h2>
+    <div id="playlist"></div>
+  </div>
+
+  <script>
+    let songs = [];
+    let currentSongIndex = 0;
+    const audioPlayer = document.getElementById("audioPlayer");
+
+    // Fetch and load songs
+    async function fetchSongs() {
+      const response = await fetch("https://vybbii-api-iu8p.onrender.com/songs");
+      const data = await response.json();
+      songs = data;
+      loadSong(currentSongIndex);
+      displaySearchResults(songs); // Initially display all songs in the search results
+    }
+
+    // Load a song by index
+    function loadSong(index) {
+      const song = songs[index];
+      currentSongIndex = index;
+      audioPlayer.src = song.audiourl;
+      document.getElementById("poster").src = song.img;
+      document.getElementById("SongName").textContent = `Song: ${song.title}`;
+      document.getElementById("Artist").innerText = `Artist: ${song.artist}`;
+      document.getElementById("albumName").textContent = `Album: ${song.album}`;
+    }
+
+    // Add currently playing song to the playlist
+    function addToPlaylist() {
+      const song = songs[currentSongIndex];
+      const playlist = document.getElementById("playlist");
+
+      // Check if the song is already in the playlist
+      if ([...playlist.children].some((item) => item.dataset.songId == currentSongIndex)) {
+        alert("This song is already in your playlist!");
+        return;
+      }
+
+      // Create a container for the playlist song
+      const songContainer = document.createElement("div");
+      songContainer.classList.add("playlist-song");
+      songContainer.dataset.songId = currentSongIndex;
+
+      // Create an image for the song
+      const img = document.createElement("img");
+      img.src = song.img;
+      img.alt = song.title;
+
+      // Create a title element for the song
+      const title = document.createElement("span");
+      title.textContent = song.title;
+
+      // Append image and title to the song container
+      songContainer.appendChild(img);
+      songContainer.appendChild(title);
+
+      // Append the song container to the playlist
+      playlist.appendChild(songContainer);
+    }
+
+    // Display search results
+    function displaySearchResults(songsToDisplay) {
+      const searchResults = document.getElementById("searchResults");
+      searchResults.innerHTML = ""; // Clear previous results
+
+      songsToDisplay.forEach((song, index) => {
+        // Create a container for the song item
+        const songContainer = document.createElement("div");
+        songContainer.classList.add("song-item");
+
+        // Create an image for the song
+        const img = document.createElement("img");
+        img.src = song.img;
+        img.alt = song.title;
+
+        // Create a title element for the song
+        const title = document.createElement("span");
+        title.textContent = song.title;
+
+        // Create a "Play" button
+        const playButton = document.createElement("button");
+        playButton.textContent = "Play";
+        playButton.onclick = () => {
+          loadSong(index);
+          audioPlayer.play();
+        };
+
+        // Append image, title, and button to the song container
+        songContainer.appendChild(img);
+        songContainer.appendChild(title);
+        songContainer.appendChild(playButton);
+
+        // Append the song container to the search results
+        searchResults.appendChild(songContainer);
+      });
+    }
+
+    // Search for songs
+    document.getElementById("searchBar").addEventListener("input", function (e) {
+      const query = e.target.value.toLowerCase();
+      const filteredSongs = songs.filter((song) =>
+        song.title.toLowerCase().includes(query) ||
+        song.artist.toLowerCase().includes(query)
+      );
+      displaySearchResults(filteredSongs);
+    });
+
+    // Event listener for the "Add to Playlist" button
+    document.getElementById("addToPlaylistBtn").addEventListener("click", addToPlaylist);
+
+    // Fetch and load songs on page load
+    fetchSongs();
+  </script>
+</body>
+</html>

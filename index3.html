@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vybbii</title>
+    <link
+      rel="shortcut icon"
+      href="./Allimages/vybbiilogo.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="index1.css" />
+    <script
+      src="https://kit.fontawesome.com/452bdfbb6f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+  <body>
+    <div id="network_error"> <img src="./Allimages/Nointernet.jpg" alt="" style="height: 100vh; width: 100vw;"></div>
+    <header class="navbar" id="Navabar">
+      <img src="./Allimages/vybbiilogo.png" alt="" id="main_logo" />
+      <div class="HomeIcon">
+        <span class="HOme_Icon">
+          <i
+            class="fa-solid fa-house fa-xl"
+            style="color: white"
+            id="home_icon"
+          ></i
+          ><br />
+          <span class="text1">HOME</span>
+        </span>
+        <div class="search-bar-container">
+          <div class="search_Icon">
+            <i
+              class="fa-solid fa-magnifying-glass fa-xl search-icon"
+              id="Search_icon"
+            ></i>
+            <span class="text2">Search</span>
+          </div>
+
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="What do you want to play"
+            oninput="getSuggestions()"
+          />
+          <br /><br />
+          <ul id="suggestions"></ul>
+          <!-- <button id="search"> bjh</button> -->
+          <span class="browse_icon"
+            ><i
+              class="fa-solid fa-microphone fa-xl chrome-icon"
+              id="Mic_icon"
+            ></i>
+            <span class="text3">Tap To Speak</span>
+          </span>
+
+          <br />
+        </div>
+      </div>
+
+      <!-- <a href=""></a> -->
+      <!-- <span class="user" id="USER">Welcome user</span> -->
+      <div>
+        <!-- <i class="fa-regular fa-moon fa-lg" style="color: #e3e7ed;" id="dark" onclick=""></i> -->
+        <button class="signup_btn" id="Signup_btn">Sign up</button
+        ><button class="login_btn" id="Login_btn">Login</button>
+      </div>
+    </header>
+    <br />
+    
+    <div id="Home_sec">
+      <div class="side_section" id="Side_section">
+        <div id="side_sec">
+          <div id="library">
+            <ion-icon name="library"></ion-icon>Your Library
+          </div>
+          <div><i class="fa-solid fa-plus"></i></div>
+        </div>
+        <div class="playlist">
+          <h3>Create your first playlist</h3>
+          <p>It's easy,we'll help you</p>
+          <button type="button" class="create_btn" id="playlist_btn">Create playlist</button>
+        </div>
+        <div class="podcast">
+          <h3>Let's find some podcasts to follow</h3>
+          <p>We'll keep you updated on new episodes</p>
+          <button type="button" class="browse_btn">Browse podcasts</button>
+        </div>
+        <div class="first_line">
+          <p>
+            <a href="https://www.spotify.com/in-en/legal/end-user-agreement/"
+              >Legal</a
+            >
+          </p>
+          <p>
+            <a href="https://www.spotify.com/in-en/safetyandprivacy"
+              >Safety&Privacy center</a
+            >
+          </p>
+          <p>
+            <a href="https://www.spotify.com/in-en/legal/privacy-policy/"
+              >Privacy Policy</a
+            >
+          </p>
+        </div>
+        <div class="second_line">
+          <p>
+            <a href="https://www.spotify.com/in-en/legal/cookies-policy/"
+              >Cookies</a
+            >
+          </p>
+          <p>
+            <a href="https://www.spotify.com/in-en/legal/privacy-policy/#s3"
+              >About Ads</a
+            >
+          </p>
+          <p>
+            <a href="https://www.spotify.com/in-en/accessibility"
+              >Accessbility</a
+            >
+          </p>
+        </div>
+        <h3 class="Cookies">
+          <a href="https://www.spotify.com/in-en/legal/cookies-policy/"
+            >Cookies</a
+          >
+        </h3>
+        <button type="button" class="lang">
+          <ion-icon name="globe"></ion-icon>English
+        </button>
+      </div>
+      <div id="main_sec">
+        <div id="songList">
+          Songlist
+        </div>
+        <div class="Browse" id="Browse_sec">
+          <div id="">
+            <img src="./Allimages/music1.jpg" alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/podcast1.jpg" alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/LiveEvents.jpg" alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/muisc2024.png" alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/podcast2024.png" alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/madefor.png" alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/NewRelease.jpg" alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/Hindi.jpg" alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/punjabi.png" alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/Tamil.png" alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/Telugu.png" alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/podcastchart.png" alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/podcastnew.png" alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/videopodcast.png" alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img
+              src="./Allimages/Business special.png"
+              alt=""
+              class="Browse_img"
+            />
+          </div>
+          <div id="">
+            <img src="./Allimages/charts.png" alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/Malayalam.png" alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/Bhojpuri.png" alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img
+              src="./Allimages/Happyholidays.png"
+              alt=""
+              class="Browse_img"
+            />
+          </div>
+          <div id="">
+            <img src="./Allimages/summer.png" alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/Discover.png" alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/decades.png" alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/hiphop.png" alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/Dance.png  " alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/student.png  " alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/chill.png " alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/Gaming .png  " alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/k pop.png " alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/Workout.png  " alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/Radar.png" alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/Equal.png  " alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/Fresh.png  " alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/Rock.png  " alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/sleep.png  " alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/indian.png " alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/instru.png  " alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img
+              src="./Allimages/spotifysingle.png  "
+              alt=""
+              class="Browse_img"
+            />
+          </div>
+          <div id="">
+            <img src="./Allimages/Athome.png " alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/Country.png " alt="" class="Browse_img" />
+          </div>
+          <div id="">
+            <img src="./Allimages/R&B.png" alt="" class="Browse_img" />
+          </div>
+        </div>
+        <div class="song_sec" id="song_Sec">
+          <img src="" alt="" srcset="" id="poster" />
+          <audio src="" id="songAudio"></audio>
+          <h2 id="albumName"></h2>
+          <p id="SongName"></p>
+          <p id="Artist"></p>
+          <br />
+          <div class="song_time">
+            <span>
+              <p id="currentTime">0:00</p>
+              <!-- Current song time -->
+            </span>
+
+            <input type="range" name="" value="0" id="progress" />
+
+            <span>
+              <p id="durationTime">0:00</p>
+              <!-- Total song duration -->
+            </span>
+          </div>
+
+          <div id="Music_controls">
+            <div id="backward" onclick="previousSong()">
+              <i class="fa-solid fa-backward"></i>
+            </div>
+            <div id="playpause" onclick="playpause()">
+              <i class="fa-solid fa-play" id="Ctrlicon"></i>
+            </div>
+            <div id="forward" onclick="nextSong()">
+              <i class="fa-solid fa-forward"></i>
+            </div>
+            <div id="Loop" onclick="toggleLoop()">
+              <i class="fa-solid fa-repeat"></i>
+            </div>
+            <div id="shuffle" onclick="toggleShuffle()">
+              <i class="fa-solid fa-shuffle"></i>
+            </div>
+            <div ><i class="fa-solid fa-plus fa-lg" id="Addtolist"></i></div>
+          </div>
+        </div>
+        <div class="space" id="space_col">
+          <h2 class="Popular">Popular Artists</h2>
+          <p class="showall">Show all</p>
+        </div>
+        <div class="Artist_sec" id="Artistsec1">
+          <div id="Artist_1">
+            <img
+              src="./Allimages/pritam Artist 1.jpg"
+              alt=""
+              class="Artist"
+              id="Pritam"
+            />
+            <img src="./Allimages/playbutton2.png" alt="" class="playbutton" />
+            <h4>Pritam</h4>
+            <p>Artist</p>
+          </div>
+          <div class="songName" style="display: none" id="PritamMusic">
+            <img
+              src="./Allimages/pritamsong.jpg"
+              
+              id="pritamimg"
+            />
+            <div class="album_song">
+              <h3>
+                <img
+                  src="https://pagalfree.com/images/128Bulleya%20-%20Ae%20Dil%20Hai%20Mushkil%20128%20Kbps.jpg"
+                  class="album_img"
+                />Bulleya 
+              </h3>
+              
+              <h3>
+                <img
+                  src="https://c.saavncdn.com/990/83-Hindi-2021-20211223195221-500x500.jpg"
+                  alt=""
+                  class="album_img"
+                />Lehra Do
+              </h3>
+              <h3>
+                <img
+                  src="https://c.saavncdn.com/129/Deva-Deva-From-Brahmastra-Tamil-Tamil-2022-20220810122105-500x500.jpg"
+                  alt=""
+                  class="album_img"
+                />Deva Deva
+              </h3>
+              <h3>
+                <img
+                  src="https://c.saavncdn.com/784/Kalank-Hindi-2019-20200508163312-500x500.jpg"
+                  alt=""
+                  class="album_img"
+                />First Class
+              </h3>
+              <h3>
+                <img
+                  src="https://pagalfree.com/images/128Tu%20Hi%20Mera%20-%20Jannat%202%20128%20Kbps.jpg"
+                  alt=""
+                  class="album_img"
+                />Tu Hi Mera
+              </h3>
+              
+              <input type="range" name="" value="0" id="progress" />
+              
+            </div>
+          </div>
+          <div id="Artist_2">
+            <img
+              src="./Allimages/arjiitsingh artist.jpg"
+              alt=""
+              class="Artist"
+              id="Arjit"
+            />
+            <img src="./Allimages/playbutton2.png" alt="" class="playbutton" />
+            <h4>Arijit singh</h4>
+            <p>Artist</p>
+          </div>
+          <div class="songName" style="display: none" id="ArjitMusic">
+            <img
+              src="./Allimages/Arjitsong.jpg"
+              id="Arjitimg"
+            />
+            <div class="album_song">
+              <h3>
+                <img
+                  src="https://cdn-images.dzcdn.net/images/cover/96989e827b559696c30fc097f85c1ea2/0x1900-000000-80-0-0.jpg"
+                  class="album_img"
+                />Kesariya
+              </h3>
+              <h3>
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCdnz1T_La-A5sZC0hw435amk2EtCefmq3kg&s"
+                  alt=""
+                  class="album_img"
+                />Satranga
+              </h3>
+              <h3>
+                <img
+                  src="https://allindiakaraokes.com/media/catalog/product/cache/877818131a842e30a6ae07cd76f935dd/a/a/aashique_2_cleanup_1.jpg"
+                  alt=""
+                  class="album_img"
+                />
+                Tum Hi Ho
+              </h3>
+              <h3>
+                <img
+                  src="https://pagalfree.com/images/128Sajni%20-%20Laapataa%20Ladies%20128%20Kbps.jpg"
+                  alt=""
+                  class="album_img"
+                />Sajni
+              </h3>
+              <h3>
+                <img
+                  src="https://i1.sndcdn.com/artworks-ah8iiDM4bJtqexxA-1v5pbQ-t500x500.jpg"
+                  alt=""
+                  class="album_img"
+                />Heeriye
+              </h3>
+            </div>
+          </div>
+          <div id="Artist_3">
+            <img
+              src="./Allimages/sachin-artist.jpg"
+              alt=""
+              class="Artist"
+              id="Sachin"
+            />
+            <img src="./Allimages/playbutton2.png" alt="" class="playbutton" />
+            <h4>Sachin-Jigar</h4>
+            <p>Artist</p>
+          </div>
+          <div class="songName" style="display: none" id="SachinMusic">
+            <img
+              src="./Allimages/sachinjigar.jpg"
+              id="sachinimg"
+            />
+            <div class="album_song">
+              <h3>
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2UiGJzwvudY12I5aaW4qnpMXJCNgjgh01Og&s"
+                  class="album_img"
+                />
+                Tere vaaste
+              </h3>
+              <h3>
+                <img
+                  src="https://i.ytimg.com/vi/LpP4rtjACM8/maxresdefault.jpg"
+                  alt=""
+                  class="album_img"
+                />Tum se
+              </h3>
+              <h3>
+                <img
+                  src="https://a10.gaanacdn.com/gn_img/song/w4MKPgOboj/MKPe75Z13o/size_m_1582177296.webp"
+                  alt=""
+                  class="album_img"
+                />Ek zindagi
+              </h3>
+              <h3>
+                <img
+                  src="https://c.saavncdn.com/102/Apna-Bana-Le-Club-Mix-Hindi-2023-20230522181036-500x500.jpg"
+                  alt=""
+                  class="album_img"
+                />Apna Bana Le
+              </h3>
+              <h3>
+                <img
+                  src="https://i.ytimg.com/vi/SZvbogoMrvY/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AGQCYAC0AWKAgwIABABGHIgSihHMA8=&rs=AOn4CLB_ZisUUkp5Yp9_JtiFjf9-cGAdMA"
+                  alt=""
+                  class="album_img"
+                />Jug Jug Jeeve
+              </h3>
+            </div>
+          </div>
+          <div id="Artist_4">
+            <img
+              src="./Allimages/Ar Rahaman.jpeg"
+              alt=""
+              class="Artist"
+              id="ARRahaman"
+            />
+            <img src="./Allimages/playbutton2.png" alt="" class="playbutton" />
+            <h4>A.R.Rahaman</h4>
+            <p>Artist</p>
+          </div>
+          <div class="songName" style="display: none" id="ArRahamanMusic">
+            <img
+              src="./Allimages/Ar Rahanm song.jpg"
+              id="ArImg"
+            />
+            <div class="album_song">
+              <h3>
+                <img
+                  src="https://i.ytimg.com/vi/xwwAVRyNmgQ/maxresdefault.jpg"
+                  class="album_img"
+                />Jai Ho
+              </h3>
+              <h3>
+                <img
+                  src="https://i.scdn.co/image/ab67616d00001e023dccac8b6e55f46b0f9d362f"
+                  alt=""
+                  class="album_img"
+                />Vellipomaakey
+              </h3>
+              <h3>
+                <img
+                  src="https://i.ytimg.com/vi/5CttV9rxhic/hqdefault.jpg"
+                  alt=""
+                  class="album_img"
+                />Neelo Valapu
+              </h3>
+              <h3>
+                <img
+                  src="https://i.ytimg.com/vi/lKQFCHeHo3w/maxresdefault.jpg"
+                  alt=""
+                  class="album_img"
+                />Randali
+              </h3>
+              <h3>
+                <img
+                  src="https://i.ytimg.com/vi/Bvd0kNVlSmA/maxresdefault.jpg"
+                  alt=""
+                  class="album_img"
+                />Sasivadane
+              </h3>
+            </div>
+          </div>
+          <div id="Artist_5">
+            <img
+              src="./Allimages/vishal artist.jpg"
+              alt=""
+              class="Artist"
+              id="Vishal"
+            />
+            <img src="./Allimages/playbutton2.png" alt="" class="playbutton" />
+            <h4>Vishal-Shekhar</h4>
+            <p>Artist</p>
+          </div>
+          <div class="songName" style="display: none" id="VishalMusic">
+            <img
+              src="./Allimages/vishalshehar.jpeg"
+             id="vishalimg"
+            />
+            <div class="album_song">
+              <h3>
+                <img
+                  src="https://i.ytimg.com/vi/kdAOuXa33U8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDkJZBEjmWWLgHF5D85qC3y4WbD4A"
+                  class="album_img"
+                />The Hook Up Song
+              </h3>
+              <h3>
+                <img
+                  src="https://i1.sndcdn.com/artworks-000091171549-3cna5p-t500x500.jpg"
+                  alt=""
+                  class="album_img"
+                />LOVELY
+              </h3>
+              <h3>
+                <img
+                  src="https://artwork.anghcdn.co/webp/?id=89060296&size=320"
+                  alt=""
+                  class="album_img"
+                />The Disco Song
+              </h3>
+              <h3>
+                <img
+                  src="https://i1.sndcdn.com/artworks-PGzSLXAcerwTxioJ-e5E4Ag-t500x500.jpg"
+                  alt=""
+                  class="album_img"
+                />O Saki Saki
+              </h3>
+              <h3>
+                <img
+                  src="https://i.ytimg.com/vi/huxhqphtDrM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBlScK9bctb85q_nbcxk4u4aZAuug"
+                  alt=""
+                  class="album_img"
+                />Besharam Rang
+              </h3>
+            </div>
+          </div>
+          <div id="Artist_6">
+            <img
+              src="./Allimages/atif aslam.jpg"
+              alt=""
+              class="Artist"
+              id="Atif"
+            />
+            <img src="./Allimages/playbutton2.png" alt="" class="playbutton" />
+            <h4>Atif Aslam</h4>
+            <p>Artist</p>
+          </div>
+          <div class="songName" style="display: none" id="AtifMusic">
+            <img
+              src="./Allimages/atifsong2.jpg"
+              id="Atifimg"
+            />
+            <div class="album_song">
+              <h3>
+                <img
+                  src="https://c.saavncdn.com/215/Tere-Sang-Yaara-From-Rustom--Hindi-2016-500x500.jpg"
+                  class="album_img"
+                />Tere Sang Yaara
+              </h3>
+              <h3>
+                <img
+                  src="https://c-fa.cdn.smule.com/rs-s80/arr/d4/c8/073e2a0d-7058-4291-92a9-df399a580dc8.jpg"
+                  alt=""
+                  class="album_img"
+                />O Saathi
+              </h3>
+              <h3>
+                <img
+                  src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhziXrV7TkctFnipXs3hyWDLy5XaMun4Lyq_4NxdA3QIKbx-C1_iXx5iPEVrPClbYEaKESxrEJsvj-2tkb-2kqN-JjawQuli7F4c7DKr5lcXh5KZ2DMbHjnZTwFZmjIJs3tfC-GCiBs_4W1/s1600/Dil+Diyan+Gallan.png"
+                  alt=""
+                  class="album_img"
+                />Dil diyan gallan
+
+              </h3>
+              <h3>
+                <img
+                  src="https://i1.sndcdn.com/artworks-000392144520-ldl7ci-t500x500.jpg"
+                  alt=""
+                  class="album_img"
+                />Dekhte Dekhte
+
+              </h3>
+              <h3>
+                <img
+                  src="https://i1.sndcdn.com/artworks-SxNiRdlNfCl8jTGX-GALi0g-t500x500.jpg"
+                  alt=""
+                  class="album_img"
+                />Pehli Dafa
+
+              </h3>
+            </div>
+          </div>
+          <div id="Artist_7">
+            <img src="./Allimages/anirudh artist.jpg" alt="" class="Artist" id="Anirudh"/>
+            <img src="./Allimages/playbutton2.png" alt="" class="playbutton" />
+            <h4>Anirudh Ravichander</h4>
+            <p>Artist</p>
+          </div>
+          <div class="songName" style="display: none" id="AnirudhMusic">
+            <img
+              src="./Allimages/Anirudhsong.png"
+              id="AnirudhImg"
+            />
+            <div class="album_song">
+              <h3>
+                <img
+                  src="https://i.ytimg.com/vi/DsjRNPrvq6U/maxresdefault.jpg"
+                  class="album_img"
+                />Hukum
+              </h3>
+              <h3>
+                <img
+                  src="https://sund-images.sunnxt.com/139162/1000x1000_JollyOGymkhana_139162_1fb3e16b-8550-4360-9198-5f96313b747f.jpg"
+                  alt=""
+                  class="album_img"
+                />Jolly O Gymkhana
+  
+              </h3>
+              <h3>
+                <img
+                  src="https://i.ytimg.com/vi/D6MOuX980gc/maxresdefault.jpg"
+                  alt=""
+                  class="album_img"
+                />Fear Song
+  
+  
+              </h3>
+              <h3>
+                <img
+                  src="https://i.ytimg.com/vi/dccjQT-D_34/maxresdefault.jpg"
+                  alt=""
+                  class="album_img"
+                />Why This Kolaveri Di
+  
+  
+              </h3>
+              <h3>
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP4Vno63T7OXBQQwAjLE5CwMT-mQCbruhGZQ&s"
+                  alt=""
+                  class="album_img"
+                />Dheema
+  
+  
+              </h3>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class="Artist_sec2" id="Artistsec2">
+          <div id="Artist_8">
+            <img src="./Allimages/vishalmishra.jpg" alt="" class="Artist" />
+            <img src="./Allimages/playbutton2.png" alt="" class="playbutton" />
+            <h4>Vishal Mishra</h4>
+            <p>Artist</p>
+          </div>
+          <div id="Artist_9">
+            <img src="./Allimages/Yo yo honey.jpg" alt="" class="Artist" />
+            <img src="./Allimages/playbutton2.png" alt="" class="playbutton" />
+            <h4>Yo Yo Honey Singh</h4>
+            <p>Artist</p>
+          </div>
+          <div id="Artist_10">
+            <img src="./Allimages/Diljit.jpg" alt="" class="Artist" />
+            <img src="./Allimages/playbutton2.png" alt="" class="playbutton" />
+            <h4>Diljit Dosanjh</h4>
+            <p>Artist</p>
+          </div>
+          <div id="Artist_11">
+            <img src="./Allimages/uditit.jpg" alt="" class="Artist" />
+            <img src="./Allimages/playbutton2.png" alt="" class="playbutton" />
+            <h4>Udit Narayan</h4>
+            <p>Artist</p>
+          </div>
+          <div id="Artist_12">
+            <img src="./Allimages/jasleen.jpg" alt="" class="Artist" />
+            <img src="./Allimages/playbutton2.png" alt="" class="playbutton" />
+            <h4>Jasleen Royal</h4>
+            <p>Artist</p>
+          </div>
+          <div id="Artist_13">
+            <img src="./Allimages/badsaah.jpg" alt="" class="Artist" />
+            <img src="./Allimages/playbutton2.png" alt="" class="playbutton" />
+            <h4>Badshah</h4>
+            <p>Artist</p>
+          </div>
+          <div id="Artist_14">
+            <img src="./Allimages/shreya gosha;.jpg" alt="" class="Artist" />
+            <img src="./Allimages/playbutton2.png" alt="" class="playbutton" />
+            <h4>Shreya Ghoshal</h4>
+            <p>Artist</p>
+          </div>
+        </div>
+        <div class="Artist_sec3" id="Artistsec3">
+          <div id="Artist_15">
+            <img src="./Allimages/karan aujla.jpg" alt="" class="Artist" />
+            <img src="./Allimages/playbutton2.png" alt="" class="playbutton" />
+            <h4>KaranAujla</h4>
+            <p>Artist</p>
+          </div>
+          <div id="Artist_16">
+            <img src="./Allimages/sachet tandeon.jpg" alt="" class="Artist" />
+            <img src="./Allimages/playbutton2.png" alt="" class="playbutton" />
+            <h4>Sachet Tandeon</h4>
+            <p>Artist</p>
+          </div>
+          <div id="Artist_17">
+            <img src="./Allimages/sonu nigam.jpg" alt="" class="Artist" />
+            <img src="./Allimages/playbutton2.png" alt="" class="playbutton" />
+            <h4>Sonu Nigam</h4>
+            <p>Artist</p>
+          </div>
+          <div id="Artist_18">
+            <img src="./Allimages/darshan raval.jpg" alt="" class="Artist" />
+            <img src="./Allimages/playbutton2.png" alt="" class="playbutton" />
+            <h4>Darhsan Raval</h4>
+            <p>Artist</p>
+          </div>
+          <div id="Artist_19">
+            <img src="./Allimages/shankar ehsaan.jpg" alt="" class="Artist" />
+            <img src="./Allimages/playbutton2.png" alt="" class="playbutton" />
+            <h4>Shankar Ehsaan</h4>
+            <p>Artist</p>
+          </div>
+          <div id="Artist_20">
+            <img src="./Allimages/anuv jain.jpg" alt="" class="Artist" />
+            <img src="./Allimages/playbutton2.png" alt="" class="playbutton" />
+            <h4>Anuv Jain</h4>
+            <p>Artist</p>
+          </div>
+        </div>
+        <div class="space" id="space_col2">
+          <h2 class="Popular">Popular Albums and singles</h2>
+          <p class="showall2">Show all</p>
+        </div>
+        <br />
+        <div class="Album_sec1" id="Album_Sec1">
+          <div id="Album_1">
+            <img src="./Allimages/Glory.jpg" alt="" class="Album" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Album_button"
+            />
+            <h4>GLORY</h4>
+            <p>Yo Yo Honey singh</p>
+          </div>
+          <div id="Album_2">
+            <img src="./Allimages/Aashiqui2.jpg" alt="" class="Album" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Album_button"
+            />
+            <h4>Aashiqui2</h4>
+            <p>Mithoon,Ankit Tiwari,<br />Jeet Gannguli</p>
+          </div>
+          <div id="Album_3">
+            <img src="./Allimages/patander.jpg" alt="" class="Album" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Album_button"
+            />
+            <h4>Patandar</h4>
+            <p>Arjan Dhillion,Mxrci</p>
+          </div>
+          <div id="Album_4">
+            <img src="./Allimages/Jo tum mere.jpg" alt="" class="Album" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Album_button"
+            />
+            <h4>Jo Tum Mere Ho</h4>
+            <p>Anuv jain</p>
+          </div>
+          <div id="Album_5">
+            <img src="./Allimages/making memories.jpg" alt="" class="Album" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Album_button"
+            />
+            <h4>Making Memories</h4>
+            <p>Karan Aujia,Ikky</p>
+          </div>
+          <div id="Album_6">
+            <img src="./Allimages/Yeh jawani.jpg" alt="" class="Album" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Album_button"
+            />
+            <h4>
+              Yeh Jawaani Hai <br />
+              Deewani
+            </h4>
+            <p>Pritam</p>
+          </div>
+          <div id="Album_7">
+            <img src="./Allimages/who remixes.jpg" alt="" class="Album" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Album_button"
+            />
+            <h4>Who (Remixes)</h4>
+            <p>Jimin</p>
+          </div>
+        </div>
+        <div class="Album_sec2" id="Album_Sec2">
+          <div id="Album_8">
+            <img src="./Allimages/Animal.jpg" alt="" class="Album" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Album_button"
+            />
+            <h4>Animal</h4>
+            <p>
+              Manan Bhardwaj,vishal <br />
+              Mishra,Jaani
+            </p>
+          </div>
+          <div id="Album_9">
+            <img src="./Allimages/ultimate love.jpg" alt="" class="Album" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Album_button"
+            />
+            <h4>
+              Ulitmate Love Songs - <br />
+              Arijit Singh
+            </h4>
+            <p>Arijit Singh</p>
+          </div>
+          <div id="Album_10">
+            <img src="./Allimages/Ghost.jpg" alt="" class="Album" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Album_button"
+            />
+            <h4>Ghost</h4>
+            <p>Diljit Dosanjh</p>
+          </div>
+          <div id="Album_11">
+            <img src="./Allimages/Moostape.jpg" alt="" class="Album" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Album_button"
+            />
+            <h4>Moostape</h4>
+            <p>Siddhu Moose wala</p>
+          </div>
+          <div id="Album_12">
+            <img src="./Allimages/still rollin.jpg" alt="" class="Album" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Album_button"
+            />
+            <h4>Still Rollin</h4>
+            <p>Shubh</p>
+          </div>
+          <div id="Album_13">
+            <img src="./Allimages/Raanjhan.jpg" alt="" class="Album" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Album_button"
+            />
+            <h4>
+              Raanjhan (From "Do <br />
+              Patti ")
+            </h4>
+            <p>
+              Sachet-Parampara, <br />
+              Parampara Tandon,...
+            </p>
+          </div>
+          <div id="Album_14">
+            <img src="./Allimages/kabir singh.jpg" alt="" class="Album" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Album_button"
+            />
+            <h4>Kabir Singh</h4>
+            <p>Sachet-Parampara,Vishal <br />Mishra,Mithoon</p>
+          </div>
+        </div>
+        <br />
+        <div class="Album_sec3" id="Album_Sec3">
+          <div id="Album_15">
+            <img src="./Allimages/rockstar.jpg" alt="" class="Album" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Album_button"
+            />
+            <h4>Rock Star</h4>
+            <p>A.R. Rahaman,Irshad Kamil</p>
+          </div>
+          <div id="Album_16">
+            <img src="./Allimages/Jab we met.jpg" alt="" class="Album" />
+
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Album_button"
+            />
+            <h4>Jab We Met</h4>
+            <p>Pritam ,Irshad Kamil <br />Sandesh Shandilya</p>
+          </div>
+          <div id="Album_17">
+            <img src="./Allimages/Hamari.jpg" alt="" class="Album" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Album_button"
+            />
+            <h4>Hamari Adhuri Kahani <br />(Original Motion...</h4>
+            <p>Jeet Gannguli,Mithoon <br />Ami Mishra</p>
+          </div>
+          <div id="Album_18">
+            <img src="./Allimages/aajkirat.jpg" alt="" class="Album" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Album_button"
+            />
+            <h4>
+              Aaj ki Raat (From <br />
+              "Stree 2")
+            </h4>
+            <p>Sachin-Jigar,Amitabh <br />Bhattacharya</p>
+          </div>
+          <div id="Album_19">
+            <img src="./Allimages/ektharaja.jpg" alt="" class="Album" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Album_button"
+            />
+            <h4>Ek Tha Raja</h4>
+            <p>Badshah</p>
+          </div>
+        </div>
+        <div class="space" id="space_col3">
+          <h2 class="Popular">Popular radio</h2>
+          <p class="showall3">Show all</p>
+        </div>
+        <br />
+        <div class="Radio_sec1" id="Radio_Sec1">
+          <div id="Radio_1">
+            <img src="./Allimages/Arjitradio.jpg" alt="" class="Radio" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Radio_button"
+            />
+            <!-- <h4>Ek Tha Raja</h4> -->
+            <!-- <br> -->
+            <p>With Sachin-Jigar,<br />Amit Trivedhi</p>
+          </div>
+          <div id="Radio_2">
+            <img src="./Allimages/Diljit radio.jpg" alt="" class="Radio" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Radio_button"
+            />
+            <!-- <h4>Ek Tha Raja</h4> -->
+            <p>
+              With Karan Aujla, <br />
+              Shubh,Sidhu...
+            </p>
+          </div>
+          <div id="Radio_3">
+            <img src="./Allimages/Shreya radio.jpg" alt="" class="Radio" />
+
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Radio_button"
+            />
+            <!-- <h4>Ek Tha Raja</h4> -->
+            <p>
+              With A.R. Rahaman,<br />
+              Vishal-Shekhar,At...
+            </p>
+          </div>
+          <div id="Radio_4">
+            <img src="./Allimages/Alka yagnik radio.jpg" alt="" class="Radio" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Radio_button"
+            />
+            <!-- <h4>Ek Tha Raja</h4> -->
+            <p>
+              With Abhijeet, <br />
+              Jatin-Lalit,Kumar...
+            </p>
+          </div>
+          <div id="Radio_5">
+            <img src="./Allimages/KK radio.jpg" alt="" class="Radio" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Radio_button"
+            />
+            <!-- <h4>Ek Tha Raja</h4> -->
+            <p>
+              With Mohit <br />
+              Chauhan,Armaan...
+            </p>
+          </div>
+          <div id="Radio_6">
+            <img src="./Allimages/Kishore radio.jpg" alt="" class="Radio" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Radio_button"
+            />
+            <!-- <h4>Ek Tha Raja</h4> -->
+            <p>
+              With Mukesh, <br />
+              Mohammed Rafi,..
+            </p>
+          </div>
+          <div id="Radio_7">
+            <img src="./Allimages/Zaafar radio.jpg" alt="" class="Radio" />
+
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Radio_button"
+            />
+            <!-- <h4>Ek Tha Raja</h4> -->
+            <p>
+              With Trip Beats, <br />
+              Clinton Gill,...
+            </p>
+          </div>
+        </div>
+        <br />
+        <div class="Radio_sec2" id="Radio_Sec2">
+          <div id="Radio_8">
+            <img src="./Allimages/Yo yo radio.jpg" alt="" class="Radio" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Radio_button"
+            />
+            <!-- <h4>Rock Star </h4> -->
+            <p>
+              With Badshah,Diljit <br />
+              Dosanjh Harrdy Sandh..
+            </p>
+          </div>
+          <div id="Radio_9">
+            <img src="./Allimages/udit radio.jpg" alt="" class="Radio" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Radio_button"
+            />
+            <!-- <h4>Rock Star </h4> -->
+            <p>
+              With Abhijeet ,Kavita <br />
+              Krishnamurthy,Uttam...
+            </p>
+          </div>
+          <div id="Radio_10">
+            <img src="./Allimages/Ar rahaman radio.jpg" alt="" class="Radio" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Radio_button"
+            />
+            <!-- <h4>Rock Star </h4> -->
+            <p>
+              With Santosh <br />
+              Narayanan,G.V...
+            </p>
+          </div>
+          <div id="Radio_11">
+            <img src="./Allimages/Gv prakash radio.jpg" alt="" class="Radio" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Radio_button"
+            />
+            <!-- <h4>Rock Star </h4> -->
+            <p>
+              With Santosh <br />
+              Narayanan, Anirudh..
+            </p>
+          </div>
+          <div id="Radio_12">
+            <img src="./Allimages/Kumar sanu.jpg" alt="" class="Radio" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Radio_button"
+            />
+            <!-- <h4>Rock Star </h4> -->
+            <p>
+              With Asha Bhosle <br />
+              Abhijeet,Jatin-Lalit an...
+            </p>
+          </div>
+          <div id="Radio_13">
+            <img src="./Allimages/Ilayaraja radio.jpg" alt="" class="Radio" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Radio_button"
+            />
+            <!-- <h4>Rock Star </h4> -->
+            <p>
+              With K.J Yesudas, <br />
+              Swarnalatha,Uma..
+            </p>
+          </div>
+          <div id="Radio_14">
+            <img src="./Allimages/latha radio.jpg" alt="" class="Radio" />
+
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Radio_button"
+            />
+            <!-- <h4>Rock Star </h4> -->
+            <p>
+              With Kishore Kumar, <br />
+              Mohammed Rafi,...
+            </p>
+          </div>
+        </div>
+        <br />
+        <br />
+        <div id="Radio_Sec3" class="Radio_sec3">
+          <div id="Radio_15">
+            <img
+              src="./Allimages/atif aslam. radiojpg.jpg"
+              alt=""
+              class="Radio"
+            />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Radio_button"
+            />
+            <!-- <h4>Rock Star </h4> -->
+            <p>
+              With Sachin-Jigar <br />
+              Sachet Tandon,Darsha...
+            </p>
+          </div>
+          <div id="Radio_16">
+            <img src="./Allimages/rahat radio.jpg" alt="" class="Radio" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Radio_button"
+            />
+            <!-- <h4>Rock Star </h4> -->
+            <p>
+              With Shankhar-Ehsaan- <br />
+              Loy,Javed Ali,A.R..
+            </p>
+          </div>
+          <div id="Radio_17">
+            <img src="./Allimages/siddhu radio.jpg" alt="" class="Radio" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Radio_button"
+            />
+            <!-- <h4>Rock Star </h4> -->
+            <p>
+              With Varinder Brar <br />
+              Karan Aujla,AP Dhillon...
+            </p>
+          </div>
+          <div id="Radio_18">
+            <img src="./Allimages/karan radio.jpg" alt="" class="Radio" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Radio_button"
+            />
+            <!-- <h4>Rock Star </h4> -->
+            <p>
+              With Shubh,Diljit <br />
+              Dosanjh AP Dhillon an..
+            </p>
+          </div>
+          <div id="Radio_19">
+            <img src="./Allimages/vishal radio jpg.jpg" alt="" class="Radio" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Radio_button"
+            />
+            <!-- <h4>Rock Star </h4> -->
+            <p>With Sachin-Jigar,Atif <br />Aslam,Sachet-Tandon..</p>
+          </div>
+          <div id="Radio_20">
+            <img src="./Allimages/spb radio.jpg" alt="" class="Radio" />
+
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Radio_button"
+            />
+            <!-- <h4>Rock Star </h4> -->
+            <p>
+              With Swarnalatha,M.M <br />
+              Keeravaani Annamayy..
+            </p>
+          </div>
+        </div>
+        <div class="space" id="space_col4">
+          <h2 class="Popular">Featured Charts</h2>
+          <!-- <p class="showall2">Show all</p> -->
+        </div>
+        <br />
+        <br />
+
+        <div class="Charts_sec" id="Charts_Sec">
+          <div id="Chart_1">
+            <img src="./Allimages/Top songs.jpg" alt="" class="Chart" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Chart_button"
+            />
+            <!-- <h4>Rock Star </h4> -->
+            <p>
+              Your weekly update <br />
+              of the most playe..
+            </p>
+          </div>
+          <div id="Chart_2">
+            <img src="./Allimages/Top usa.jpg" alt="" class="Chart" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Chart_button"
+            />
+            <!-- <h4>Rock Star </h4> -->
+            <p>
+              Your weekly update <br />
+              of the most playe..
+            </p>
+          </div>
+          <div id="Chart_3">
+            <img src="./Allimages/Top 50.jpg" alt="" class="Chart" />
+
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Chart_button"
+            />
+            <!-- <h4>Rock Star </h4> -->
+            <p>Your daily update of <br />the most played..</p>
+          </div>
+          <div id="Chart_4">
+            <img src="./Allimages/Top 50 usa.jpg" alt="" class="Chart" />
+
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Chart_button"
+            />
+            <!-- <h4>Rock Star </h4> -->
+            <p>Your daily update of <br />the most played..</p>
+          </div>
+          <div id="Chart_5">
+            <img src="./Allimages/Viral 50 global.jpg" alt="" class="Chart" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Chart_button"
+            />
+            <!-- <h4>Rock Star </h4> -->
+            <p>
+              Your daily update of <br />
+              the most viral trac...
+            </p>
+          </div>
+          <div id="Chart_6">
+            <img src="./Allimages/viral 50 usa.jpg" alt="" class="Chart" />
+            <img
+              src="./Allimages/playbutton2.png"
+              alt=""
+              class="Chart_button"
+            />
+            <!-- <h4>Rock Star </h4> -->
+            <p>
+              Your daily update of <br />
+              the most viral trac...
+            </p>
+          </div>
+        </div>
+        <div class="space" id="space_col5">
+          <h2 class="Popular">Playlist from our editors</h2>
+          <!-- <p class="showall2">Show all</p> -->
+        </div>
+        <br />
+        <div class="Editor_sec" id="Editor_Sec">
+          <div id="Editor_1">
+            <img src="./Allimages/sundaybruch.jpg" alt="" class="Radio" />
+
+            <img src="./Allimages/playbutton2.png" alt="" class="Editor_btn" />
+            <!-- <h4>Rock Star </h4> -->
+            <p>
+              Classic tunes <br />
+              served over easy f..
+            </p>
+          </div>
+          <div id="Editor_1" id="Editor_Sec">
+            <img src="./Allimages/lazy sunday.jpg" alt="" class="Radio" />
+            <img src="./Allimages/playbutton2.png" alt="" class="Editor_btn" />
+            <!-- <h4>Rock Star </h4> -->
+            <p>
+              Because a quiet <br />
+              Sunday every now ...
+            </p>
+          </div>
+          <div id="Editor_2">
+            <img src="./Allimages/rapcavir.jpg" alt="" class="Radio" />
+
+            <img src="./Allimages/playbutton2.png" alt="" class="Editor_btn" />
+            <!-- <h4>Rock Star </h4> -->
+            <p>Live music from Lil <br />Baby.</p>
+          </div>
+          <div id="Editor_3">
+            <img src="./Allimages/sunday mood.jpg" alt="" class="Radio" />
+
+            <img src="./Allimages/playbutton2.png" alt="" class="Editor_btn" />
+            <!-- <h4>Rock Star </h4> -->
+            <p>
+              A lazy sunday vibe ,<br />
+              whatever day of t...
+            </p>
+          </div>
+          <div id="Editor_4">
+            <img src="./Allimages/sweet.jpg" alt="" class="Radio" />
+
+            <img src="./Allimages/playbutton2.png" alt="" class="Editor_btn" />
+            <!-- <h4>Rock Star </h4> -->
+            <p>
+              Bask in the sound of <br />
+              soul,old and new
+            </p>
+          </div>
+          <div id="Editor_5">
+            <img src="./Allimages/sunday sess.jpg" alt="" class="Radio" />
+
+            <img src="./Allimages/playbutton2.png" alt="" class="Editor_btn" />
+            <!-- <h4>Rock Star </h4> -->
+            <p>
+              Kick on with this <br />
+              mix of homegrow...
+            </p>
+          </div>
+          <div id="Editor_6">
+            <img src="./Allimages/viva.jpg" alt="" class="Radio" />
+
+            <img src="./Allimages/playbutton2.png" alt="" class="Editor_btn" />
+            <!-- <h4>Rock Star </h4> -->
+            <p>
+              Today's top Latin <br />
+              hits,elevando...
+            </p>
+          </div>
+        </div>
+        <br /><br />
+        <footer id="footer_sec">
+          <div>
+            <h3>Company</h3>
+            <p>About</p>
+            <p>Jobs</p>
+            <p>For the Record</p>
+          </div>
+          <div>
+            <h3>Communities</h3>
+            <p>For Artists</p>
+            <p>Developers</p>
+            <p>Advertising</p>
+            <p>Investors</p>
+            <p>Vendors</p>
+          </div>
+          <div>
+            <h3>Usefull Links</h3>
+            <p>Support</p>
+            <p>Free Mobile App</p>
+          </div>
+          <div>
+            <h3>Vybbii Plans</h3>
+            <p>Premium Individual</p>
+            <p>Premium Duo</p>
+            <p>Premium family</p>
+            <p>Premium Student</p>
+            <p>Vybbii Free</p>
+          </div>
+
+          <div class="footer_icons">
+            <p>
+              <i
+                class="fa-brands fa-instagram fa-lg"
+                style="color: #d3d7de"
+              ></i>
+            </p>
+            <p>
+              <i class="fa-brands fa-twitter fa-lg" style="color: #dcdfe4"></i>
+            </p>
+            <p>
+              <i class="fa-brands fa-facebook fa-lg" style="color: #dbdde1"></i>
+            </p>
+          </div>
+        </footer>
+        <br /><br />
+        <!-- <span cl></span> -->
+        <hr />
+        <div class="allcond" id="AllCond">
+          <div class="conditions">
+            <p>Legal</p>
+            <p>Safety & Privacy Center</p>
+            <p>Privacy Policy</p>
+            <p>cookies</p>
+            <p>About Ads</p>
+            <p>Accessbility</p>
+          </div>
+          <div>© 2025Vybii</div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div id="Free_Time"><p class="Trail_text">Preview Of  VYBBII <br> Join in a Freetrial get Unlimited Songs No Credit card needed</p> <button id="sign_free_btn">Signup-For-Free</button></div>
+    <script src="./Freetrail.js"></script>
+  </body>
+</html>
