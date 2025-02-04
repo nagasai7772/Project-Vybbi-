@@ -185,10 +185,10 @@ showall3[0].addEventListener("click", () => {
   Side_section.style.height = "56%";
 });
 Login_btn.addEventListener("click", () => {
-  window.open("./index4.html");
+  window.open("./index4.html","_self");
 });
 Signup_btn.addEventListener("click", () => {
-  window.open("./index5.html");
+  window.open("./index5.html","_self");
 });
 
 home_icon.addEventListener("click", () => {

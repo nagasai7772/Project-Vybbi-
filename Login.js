@@ -31,7 +31,7 @@ submit_btn.addEventListener("click",()=>
           console.log("user signed",user);
           alert("success",user)
 
-          window.open("./index2.html")
+          window.open("./index2.html","_self")
           
       })
       .catch((error)=>

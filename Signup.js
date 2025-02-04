@@ -79,7 +79,7 @@ Signup_btn.addEventListener("click", () => {
       const user = userCredential.user;
       console.log("user signed", user);
       alert("success", user);
-      window.open("./index4.html")
+      window.open("./index4.html","_self")
     })
     .catch((error) => {
       const errorCode = error.code;
