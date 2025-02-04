@@ -256,7 +256,7 @@ setTimeout(() => {
   freeAccess = false;
   alert("Your free access has ended. Please sign up!");
   window.location.href = "index5.html";
-}, 30000); // 30 seconds
+}, 180000); // 30 seconds
 
 // Fetch and load song data
 async function fetchSongs() {
