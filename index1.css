@@ -13,8 +13,8 @@ body {
   background-color: black;
   
   width: auto;
-  /* height: 50vh; */
-  /* overflow: hidden; */
+  height: 50vh;
+  overflow: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -1334,7 +1334,7 @@ a:hover {
   padding: 15px;
   align-items: center;
   position: relative;
-  margin-top: -30px;
+  margin-top: -50px;
   z-index: 1;
   cursor: pointer;
 }
@@ -2241,12 +2241,12 @@ a:hover {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    max-height: 300px; /* Limit the height of the suggestions box */
+    max-height: 350px; /* Limit the height of the suggestions box */
     overflow-y: auto;
     position: absolute; /* Position it below the input */
-    width: 240px; /* Width should be the same as the input field */
+    width: 200px; /* Width should be the same as the input field */
     top: 100%; /* Position the suggestions list directly below the input field */
-    left: 50px;
+    left: 140px;
     background-color: black;
     color: white;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",

@@ -566,436 +566,478 @@ Mic_icon.addEventListener("click", () => {
     poster.src = img || "default_image_path.jpg"; // Provide a default image path if `img` is undefined
   }
 });
+let searchedSong;
+Addtolist.addEventListener("click", function () {
+  // Get the current or searched song
+  const currentSong = searchedSong || songs[currentSongIndex];
 
+  // Check if the song is already in the list to prevent duplicates
+  const existingSong = Array.from(songList.children).find(
+    (item) => item.dataset.songId === currentSong.id.toString() // Use a unique ID for the song
+  );
 
-Pritam.addEventListener("click", () => {
-  Artist_sec2.style.display = "none";
-  Artist_sec3.style.display = "none";
-  Album_Sec1.style.display = "none";
-  Album_Sec2.style.display = "none";
-  Album_Sec3.style.display = "none";
-  Radio_Sec1.style.display = "none";
-  Radio_Sec2.style.display = "none";
-  Radio_Sec3.style.display = "none";
-  Charts_Sec.style.display = "none";
-  Editor_Sec.style.display = "none";
-  space2.style.display = "none";
-  space3.style.display = "none";
-  space4.style.display = "none";
-  space5.style.display = "none";
-  Artist_1.style.display = "none";
-  Artist_2.style.display = "none";
-  Artist_3.style.display = "none";
-  Artist_4.style.display = "none";
-  Artist_5.style.display = "none";
-  Artist_6.style.display = "none";
-  Artist_7.style.display = "none";
-  Music_controls.style.display="flex"
-  progress.style.display="inline"
-  PritamMusic.style.display = "block";
-  space.style.display = "none";
-  async function Songs() {
-    try {
-      const response = await fetch(
-        "https://vybbii-api-iu8p.onrender.com/songs"
-      );
-      const songs = await response.json();
-
-      // Attach click event to each existing h3 element
-      // h3Elements.style.display="block"
-      // div.style.display="inline"
-      h3Elements.forEach((h3) => {
-        const matchingSong = songs.find(
-          (song) => song.title === h3.textContent.trim()
-        );
-
-        // If a matching song is found, bind it to the click event
-        if (matchingSong) {
-          h3.addEventListener("click", () => playSong(matchingSong.audiourl));
-        }
-      });
-    } catch (error) {
-      console.error("Error fetching songs:", error);
-    }
+  if (existingSong) {
+    alert("This song is already in your playlist!");
+    return;
   }
 
-  function playSong(audiourl) {
-    songAudio.src = audiourl;
-    songAudio.load();
-    songAudio.play();
-  }
+  // Create a container for the song
+  const songContainer = document.createElement("div");
+  songContainer.classList.add("song-item");
+  songContainer.dataset.songId = currentSong.id; // Add a unique identifier for the song
 
-  // Initialize by fetching songs and setting up events
-  Songs();
+  // Create an image element for the song
+  const img = document.createElement("img");
+  img.src = currentSong.img;
+  img.alt = currentSong.title;
+  img.style.width = "50px";
+  img.style.height = "50px";
+
+  // Create a title element for the song
+  const title = document.createElement("span");
+  title.textContent = currentSong.title;
+  title.style.marginLeft = "10px";
+
+  // Append the image and title to the container
+  songContainer.appendChild(img);
+  songContainer.appendChild(title);
+
+  // Append the container to the song list
+  songList.appendChild(songContainer);
+
+  alert(`${currentSong.title} has been added to your playlist!`);
+  
 });
 
-// Array with song names only
 
-Arjit.addEventListener("click", () => {
-  Artist_sec2.style.display = "none";
-  Artist_sec3.style.display = "none";
-  Album_Sec1.style.display = "none";
-  Album_Sec2.style.display = "none";
-  Album_Sec3.style.display = "none";
-  Radio_Sec1.style.display = "none";
-  Radio_Sec2.style.display = "none";
-  Radio_Sec3.style.display = "none";
-  Charts_Sec.style.display = "none";
-  Editor_Sec.style.display = "none";
-  space2.style.display = "none";
-  space3.style.display = "none";
-  space4.style.display = "none";
-  space5.style.display = "none";
-  Artist_1.style.display = "none";
-  Artist_2.style.display = "none";
-  Artist_3.style.display = "none";
-  Artist_4.style.display = "none";
-  Artist_5.style.display = "none";
-  Artist_6.style.display = "none";
-  Artist_7.style.display = "none";
-  ArjitMusic.style.display = "block";
-  space.style.display = "none";
+// Pritam.addEventListener("click", () => {
+//   Artist_sec2.style.display = "none";
+//   Artist_sec3.style.display = "none";
+//   Album_Sec1.style.display = "none";
+//   Album_Sec2.style.display = "none";
+//   Album_Sec3.style.display = "none";
+//   Radio_Sec1.style.display = "none";
+//   Radio_Sec2.style.display = "none";
+//   Radio_Sec3.style.display = "none";
+//   Charts_Sec.style.display = "none";
+//   Editor_Sec.style.display = "none";
+//   space2.style.display = "none";
+//   space3.style.display = "none";
+//   space4.style.display = "none";
+//   space5.style.display = "none";
+//   Artist_1.style.display = "none";
+//   Artist_2.style.display = "none";
+//   Artist_3.style.display = "none";
+//   Artist_4.style.display = "none";
+//   Artist_5.style.display = "none";
+//   Artist_6.style.display = "none";
+//   Artist_7.style.display = "none";
+//   Music_controls.style.display="flex"
+//   progress.style.display="inline"
+//   PritamMusic.style.display = "block";
+//   space.style.display = "none";
+//   async function Songs() {
+//     try {
+//       const response = await fetch(
+//         "https://vybbii-api-iu8p.onrender.com/songs"
+//       );
+//       const songs = await response.json();
 
-  async function Songs() {
-    try {
-      const response = await fetch(
-        "https://vybbii-api-iu8p.onrender.com/songs"
-      );
-      const songs = await response.json();
+//       // Attach click event to each existing h3 element
+//       // h3Elements.style.display="block"
+//       // div.style.display="inline"
+//       h3Elements.forEach((h3) => {
+//         const matchingSong = songs.find(
+//           (song) => song.title === h3.textContent.trim()
+//         );
 
-      // Attach click event to each existing h3 element
-      // h3Elements.style.display="block"
-      // div.style.display="inline"
-      h3Elements.forEach((h3) => {
-        const matchingSong = songs.find(
-          (song) => song.title === h3.textContent.trim()
-        );
+//         // If a matching song is found, bind it to the click event
+//         if (matchingSong) {
+//           h3.addEventListener("click", () => playSong(matchingSong.audiourl));
+//         }
+//       });
+//     } catch (error) {
+//       console.error("Error fetching songs:", error);
+//     }
+//   }
 
-        // If a matching song is found, bind it to the click event
-        if (matchingSong) {
-          h3.addEventListener("click", () => playSong(matchingSong.audiourl));
-        }
-      });
-    } catch (error) {
-      console.error("Error fetching songs:", error);
-    }
-  }
+//   function playSong(audiourl) {
+//     songAudio.src = audiourl;
+//     songAudio.load();
+//     songAudio.play();
+//   }
 
-  function playSong(audiourl) {
-    songAudio.src = audiourl;
-    songAudio.load();
-    songAudio.play();
-  }
+//   // Initialize by fetching songs and setting up events
+//   Songs();
+// });
 
-  // Initialize by fetching songs and setting up events
-  Songs();
-});
+// // Array with song names only
 
-Sachin.addEventListener("click", () => {
-  Artist_sec2.style.display = "none";
-  Artist_sec3.style.display = "none";
-  Album_Sec1.style.display = "none";
-  Album_Sec2.style.display = "none";
-  Album_Sec3.style.display = "none";
-  Radio_Sec1.style.display = "none";
-  Radio_Sec2.style.display = "none";
-  Radio_Sec3.style.display = "none";
-  Charts_Sec.style.display = "none";
-  Editor_Sec.style.display = "none";
-  space2.style.display = "none";
-  space3.style.display = "none";
-  space4.style.display = "none";
-  space5.style.display = "none";
-  // Arjit.style.display="none"
-  Artist_1.style.display = "none";
-  Artist_2.style.display = "none";
-  Artist_3.style.display = "none";
-  Artist_4.style.display = "none";
-  Artist_5.style.display = "none";
-  Artist_6.style.display = "none";
-  Artist_7.style.display = "none";
-  // Artist_2.style.display="none"
-  // Artist_2.style.display="none"
-  SachinMusic.style.display = "block";
-  space.style.display = "none";
-  async function Songs() {
-    try {
-      const response = await fetch(
-        "https://vybbii-api-iu8p.onrender.com/songs"
-      );
-      const songs = await response.json();
+// Arjit.addEventListener("click", () => {
+//   Artist_sec2.style.display = "none";
+//   Artist_sec3.style.display = "none";
+//   Album_Sec1.style.display = "none";
+//   Album_Sec2.style.display = "none";
+//   Album_Sec3.style.display = "none";
+//   Radio_Sec1.style.display = "none";
+//   Radio_Sec2.style.display = "none";
+//   Radio_Sec3.style.display = "none";
+//   Charts_Sec.style.display = "none";
+//   Editor_Sec.style.display = "none";
+//   space2.style.display = "none";
+//   space3.style.display = "none";
+//   space4.style.display = "none";
+//   space5.style.display = "none";
+//   Artist_1.style.display = "none";
+//   Artist_2.style.display = "none";
+//   Artist_3.style.display = "none";
+//   Artist_4.style.display = "none";
+//   Artist_5.style.display = "none";
+//   Artist_6.style.display = "none";
+//   Artist_7.style.display = "none";
+//   ArjitMusic.style.display = "block";
+//   space.style.display = "none";
 
-      // Attach click event to each existing h3 element
-      // h3Elements.style.display="block"
-      // div.style.display="inline"
-      h3Elements.forEach((h3) => {
-        const matchingSong = songs.find(
-          (song) => song.title === h3.textContent.trim()
-        );
+//   async function Songs() {
+//     try {
+//       const response = await fetch(
+//         "https://vybbii-api-iu8p.onrender.com/songs"
+//       );
+//       const songs = await response.json();
 
-        // If a matching song is found, bind it to the click event
-        if (matchingSong) {
-          h3.addEventListener("click", () => playSong(matchingSong.audiourl));
-        }
-      });
-    } catch (error) {
-      console.error("Error fetching songs:", error);
-    }
-  }
+//       // Attach click event to each existing h3 element
+//       // h3Elements.style.display="block"
+//       // div.style.display="inline"
+//       h3Elements.forEach((h3) => {
+//         const matchingSong = songs.find(
+//           (song) => song.title === h3.textContent.trim()
+//         );
 
-  function playSong(audiourl) {
-    songAudio.src = audiourl;
-    songAudio.load();
-    songAudio.play();
-  }
+//         // If a matching song is found, bind it to the click event
+//         if (matchingSong) {
+//           h3.addEventListener("click", () => playSong(matchingSong.audiourl));
+//         }
+//       });
+//     } catch (error) {
+//       console.error("Error fetching songs:", error);
+//     }
+//   }
 
-  // Initialize by fetching songs and setting up events
-  Songs();
-});
+//   function playSong(audiourl) {
+//     songAudio.src = audiourl;
+//     songAudio.load();
+//     songAudio.play();
+//   }
 
-ARRahaman.addEventListener("click", () => {
-  Artist_sec2.style.display = "none";
-  Artist_sec3.style.display = "none";
-  Album_Sec1.style.display = "none";
-  Album_Sec2.style.display = "none";
-  Album_Sec3.style.display = "none";
-  Radio_Sec1.style.display = "none";
-  Radio_Sec2.style.display = "none";
-  Radio_Sec3.style.display = "none";
-  Charts_Sec.style.display = "none";
-  Editor_Sec.style.display = "none";
-  space2.style.display = "none";
-  space3.style.display = "none";
-  space4.style.display = "none";
-  space5.style.display = "none";
-  // Arjit.style.display="none"
-  Artist_1.style.display = "none";
-  Artist_2.style.display = "none";
-  Artist_3.style.display = "none";
-  Artist_4.style.display = "none";
-  Artist_5.style.display = "none";
-  Artist_6.style.display = "none";
-  Artist_7.style.display = "none";
-  // Artist_2.style.display="none"
-  // Artist_2.style.display="none"
-  ArRahamanMusic.style.display = "block";
-  space.style.display = "none";
-  async function Songs() {
-    try {
-      const response = await fetch(
-        "https://vybbii-api-iu8p.onrender.com/songs"
-      );
-      const songs = await response.json();
+//   // Initialize by fetching songs and setting up events
+//   Songs();
+// });
 
-      // Attach click event to each existing h3 element
-      // h3Elements.style.display="block"
-      // div.style.display="inline"
-      h3Elements.forEach((h3) => {
-        const matchingSong = songs.find(
-          (song) => song.title === h3.textContent.trim()
-        );
+// Sachin.addEventListener("click", () => {
+//   Artist_sec2.style.display = "none";
+//   Artist_sec3.style.display = "none";
+//   Album_Sec1.style.display = "none";
+//   Album_Sec2.style.display = "none";
+//   Album_Sec3.style.display = "none";
+//   Radio_Sec1.style.display = "none";
+//   Radio_Sec2.style.display = "none";
+//   Radio_Sec3.style.display = "none";
+//   Charts_Sec.style.display = "none";
+//   Editor_Sec.style.display = "none";
+//   space2.style.display = "none";
+//   space3.style.display = "none";
+//   space4.style.display = "none";
+//   space5.style.display = "none";
+//   // Arjit.style.display="none"
+//   Artist_1.style.display = "none";
+//   Artist_2.style.display = "none";
+//   Artist_3.style.display = "none";
+//   Artist_4.style.display = "none";
+//   Artist_5.style.display = "none";
+//   Artist_6.style.display = "none";
+//   Artist_7.style.display = "none";
+//   // Artist_2.style.display="none"
+//   // Artist_2.style.display="none"
+//   SachinMusic.style.display = "block";
+//   space.style.display = "none";
+//   async function Songs() {
+//     try {
+//       const response = await fetch(
+//         "https://vybbii-api-iu8p.onrender.com/songs"
+//       );
+//       const songs = await response.json();
 
-        // If a matching song is found, bind it to the click event
-        if (matchingSong) {
-          h3.addEventListener("click", () => playSong(matchingSong.audiourl));
-        }
-      });
-    } catch (error) {
-      console.error("Error fetching songs:", error);
-    }
-  }
+//       // Attach click event to each existing h3 element
+//       // h3Elements.style.display="block"
+//       // div.style.display="inline"
+//       h3Elements.forEach((h3) => {
+//         const matchingSong = songs.find(
+//           (song) => song.title === h3.textContent.trim()
+//         );
 
-  function playSong(audiourl) {
-    songAudio.src = audiourl;
-    songAudio.load();
-    songAudio.play();
-  }
+//         // If a matching song is found, bind it to the click event
+//         if (matchingSong) {
+//           h3.addEventListener("click", () => playSong(matchingSong.audiourl));
+//         }
+//       });
+//     } catch (error) {
+//       console.error("Error fetching songs:", error);
+//     }
+//   }
 
-  // Initialize by fetching songs and setting up events
-  Songs();
-});
+//   function playSong(audiourl) {
+//     songAudio.src = audiourl;
+//     songAudio.load();
+//     songAudio.play();
+//   }
 
-Vishal.addEventListener("click", () => {
-  Artist_sec2.style.display = "none";
-  Artist_sec3.style.display = "none";
-  Album_Sec1.style.display = "none";
-  Album_Sec2.style.display = "none";
-  Album_Sec3.style.display = "none";
-  Radio_Sec1.style.display = "none";
-  Radio_Sec2.style.display = "none";
-  Radio_Sec3.style.display = "none";
-  Charts_Sec.style.display = "none";
-  Editor_Sec.style.display = "none";
-  space2.style.display = "none";
-  space3.style.display = "none";
-  space4.style.display = "none";
-  space5.style.display = "none";
-  // Arjit.style.display="none"
-  Artist_1.style.display = "none";
-  Artist_2.style.display = "none";
-  Artist_3.style.display = "none";
-  Artist_4.style.display = "none";
-  Artist_5.style.display = "none";
-  Artist_6.style.display = "none";
-  Artist_7.style.display = "none";
-  // Artist_2.style.display="none"
-  // Artist_2.style.display="none"
-  VishalMusic.style.display = "block";
-  space.style.display = "none";
-  async function Songs() {
-    try {
-      const response = await fetch(
-        "https://vybbii-api-iu8p.onrender.com/songs"
-      );
-      const songs = await response.json();
+//   // Initialize by fetching songs and setting up events
+//   Songs();
+// });
 
-      // Attach click event to each existing h3 element
-      // h3Elements.style.display="block"
-      // div.style.display="inline"
-      h3Elements.forEach((h3) => {
-        const matchingSong = songs.find(
-          (song) => song.title === h3.textContent.trim()
-        );
+// ARRahaman.addEventListener("click", () => {
+//   Artist_sec2.style.display = "none";
+//   Artist_sec3.style.display = "none";
+//   Album_Sec1.style.display = "none";
+//   Album_Sec2.style.display = "none";
+//   Album_Sec3.style.display = "none";
+//   Radio_Sec1.style.display = "none";
+//   Radio_Sec2.style.display = "none";
+//   Radio_Sec3.style.display = "none";
+//   Charts_Sec.style.display = "none";
+//   Editor_Sec.style.display = "none";
+//   space2.style.display = "none";
+//   space3.style.display = "none";
+//   space4.style.display = "none";
+//   space5.style.display = "none";
+//   // Arjit.style.display="none"
+//   Artist_1.style.display = "none";
+//   Artist_2.style.display = "none";
+//   Artist_3.style.display = "none";
+//   Artist_4.style.display = "none";
+//   Artist_5.style.display = "none";
+//   Artist_6.style.display = "none";
+//   Artist_7.style.display = "none";
+//   // Artist_2.style.display="none"
+//   // Artist_2.style.display="none"
+//   ArRahamanMusic.style.display = "block";
+//   space.style.display = "none";
+//   async function Songs() {
+//     try {
+//       const response = await fetch(
+//         "https://vybbii-api-iu8p.onrender.com/songs"
+//       );
+//       const songs = await response.json();
 
-        // If a matching song is found, bind it to the click event
-        if (matchingSong) {
-          h3.addEventListener("click", () => playSong(matchingSong.audiourl));
-        }
-      });
-    } catch (error) {
-      console.error("Error fetching songs:", error);
-    }
-  }
+//       // Attach click event to each existing h3 element
+//       // h3Elements.style.display="block"
+//       // div.style.display="inline"
+//       h3Elements.forEach((h3) => {
+//         const matchingSong = songs.find(
+//           (song) => song.title === h3.textContent.trim()
+//         );
 
-  function playSong(audiourl) {
-    songAudio.src = audiourl;
-    songAudio.load();
-    songAudio.play();
-  }
+//         // If a matching song is found, bind it to the click event
+//         if (matchingSong) {
+//           h3.addEventListener("click", () => playSong(matchingSong.audiourl));
+//         }
+//       });
+//     } catch (error) {
+//       console.error("Error fetching songs:", error);
+//     }
+//   }
 
-  // Initialize by fetching songs and setting up events
-  Songs();
-});
+//   function playSong(audiourl) {
+//     songAudio.src = audiourl;
+//     songAudio.load();
+//     songAudio.play();
+//   }
 
-Atif.addEventListener("click", () => {
-  Artist_sec2.style.display = "none";
-  Artist_sec3.style.display = "none";
-  Album_Sec1.style.display = "none";
-  Album_Sec2.style.display = "none";
-  Album_Sec3.style.display = "none";
-  Radio_Sec1.style.display = "none";
-  Radio_Sec2.style.display = "none";
-  Radio_Sec3.style.display = "none";
-  Charts_Sec.style.display = "none";
-  Editor_Sec.style.display = "none";
-  space2.style.display = "none";
-  space3.style.display = "none";
-  space4.style.display = "none";
-  space5.style.display = "none";
-  // Arjit.style.display="none"
-  Artist_1.style.display = "none";
-  Artist_2.style.display = "none";
-  Artist_3.style.display = "none";
-  Artist_4.style.display = "none";
-  Artist_5.style.display = "none";
-  Artist_6.style.display = "none";
-  Artist_7.style.display = "none";
-  // Artist_2.style.display="none"
-  // Artist_2.style.display="none"
-  AtifMusic.style.display = "block";
-  space.style.display = "none";
-  async function Songs() {
-    try {
-      const response = await fetch(
-        "https://vybbii-api-iu8p.onrender.com/songs"
-      );
-      const songs = await response.json();
+//   // Initialize by fetching songs and setting up events
+//   Songs();
+// });
 
-      // Attach click event to each existing h3 element
-      // h3Elements.style.display="block"
-      // div.style.display="inline"
-      h3Elements.forEach((h3) => {
-        const matchingSong = songs.find(
-          (song) => song.title === h3.textContent.trim()
-        );
+// Vishal.addEventListener("click", () => {
+//   Artist_sec2.style.display = "none";
+//   Artist_sec3.style.display = "none";
+//   Album_Sec1.style.display = "none";
+//   Album_Sec2.style.display = "none";
+//   Album_Sec3.style.display = "none";
+//   Radio_Sec1.style.display = "none";
+//   Radio_Sec2.style.display = "none";
+//   Radio_Sec3.style.display = "none";
+//   Charts_Sec.style.display = "none";
+//   Editor_Sec.style.display = "none";
+//   space2.style.display = "none";
+//   space3.style.display = "none";
+//   space4.style.display = "none";
+//   space5.style.display = "none";
+//   // Arjit.style.display="none"
+//   Artist_1.style.display = "none";
+//   Artist_2.style.display = "none";
+//   Artist_3.style.display = "none";
+//   Artist_4.style.display = "none";
+//   Artist_5.style.display = "none";
+//   Artist_6.style.display = "none";
+//   Artist_7.style.display = "none";
+//   // Artist_2.style.display="none"
+//   // Artist_2.style.display="none"
+//   VishalMusic.style.display = "block";
+//   space.style.display = "none";
+//   async function Songs() {
+//     try {
+//       const response = await fetch(
+//         "https://vybbii-api-iu8p.onrender.com/songs"
+//       );
+//       const songs = await response.json();
 
-        // If a matching song is found, bind it to the click event
-        if (matchingSong) {
-          h3.addEventListener("click", () => playSong(matchingSong.audiourl));
-        }
-      });
-    } catch (error) {
-      console.error("Error fetching songs:", error);
-    }
-  }
+//       // Attach click event to each existing h3 element
+//       // h3Elements.style.display="block"
+//       // div.style.display="inline"
+//       h3Elements.forEach((h3) => {
+//         const matchingSong = songs.find(
+//           (song) => song.title === h3.textContent.trim()
+//         );
 
-  function playSong(audiourl) {
-    songAudio.src = audiourl;
-    songAudio.load();
-    songAudio.play();
-  }
+//         // If a matching song is found, bind it to the click event
+//         if (matchingSong) {
+//           h3.addEventListener("click", () => playSong(matchingSong.audiourl));
+//         }
+//       });
+//     } catch (error) {
+//       console.error("Error fetching songs:", error);
+//     }
+//   }
 
-  // Initialize by fetching songs and setting up events
-  Songs();
-});
-Anirudh.addEventListener("click", () => {
-  Artist_sec2.style.display = "none";
-  Artist_sec3.style.display = "none";
-  Album_Sec1.style.display = "none";
-  Album_Sec2.style.display = "none";
-  Album_Sec3.style.display = "none";
-  Radio_Sec1.style.display = "none";
-  Radio_Sec2.style.display = "none";
-  Radio_Sec3.style.display = "none";
-  Charts_Sec.style.display = "none";
-  Editor_Sec.style.display = "none";
-  space2.style.display = "none";
-  space3.style.display = "none";
-  space4.style.display = "none";
-  space5.style.display = "none";
-  // Arjit.style.display="none"
-  Artist_1.style.display = "none";
-  Artist_2.style.display = "none";
-  Artist_3.style.display = "none";
-  Artist_4.style.display = "none";
-  Artist_5.style.display = "none";
-  Artist_6.style.display = "none";
-  Artist_7.style.display = "none";
-  // Artist_2.style.display="none"
-  // Artist_2.style.display="none"
-  AnirudhMusic.style.display = "block";
-  space.style.display = "none";
-  async function Songs() {
-    try {
-      const response = await fetch(
-        "https://vybbii-api-iu8p.onrender.com/songs"
-      );
-      const songs = await response.json();
+//   function playSong(audiourl) {
+//     songAudio.src = audiourl;
+//     songAudio.load();
+//     songAudio.play();
+//   }
 
-      // Attach click event to each existing h3 element
-      // h3Elements.style.display="block"
-      // div.style.display="inline"
-      h3Elements.forEach((h3) => {
-        const matchingSong = songs.find(
-          (song) => song.title === h3.textContent.trim()
-        );
+//   // Initialize by fetching songs and setting up events
+//   Songs();
+// });
 
-        // If a matching song is found, bind it to the click event
-        if (matchingSong) {
-          h3.addEventListener("click", () => playSong(matchingSong.audiourl));
-        }
-      });
-    } catch (error) {
-      console.error("Error fetching songs:", error);
-    }
-  }
+// Atif.addEventListener("click", () => {
+//   Artist_sec2.style.display = "none";
+//   Artist_sec3.style.display = "none";
+//   Album_Sec1.style.display = "none";
+//   Album_Sec2.style.display = "none";
+//   Album_Sec3.style.display = "none";
+//   Radio_Sec1.style.display = "none";
+//   Radio_Sec2.style.display = "none";
+//   Radio_Sec3.style.display = "none";
+//   Charts_Sec.style.display = "none";
+//   Editor_Sec.style.display = "none";
+//   space2.style.display = "none";
+//   space3.style.display = "none";
+//   space4.style.display = "none";
+//   space5.style.display = "none";
+//   // Arjit.style.display="none"
+//   Artist_1.style.display = "none";
+//   Artist_2.style.display = "none";
+//   Artist_3.style.display = "none";
+//   Artist_4.style.display = "none";
+//   Artist_5.style.display = "none";
+//   Artist_6.style.display = "none";
+//   Artist_7.style.display = "none";
+//   // Artist_2.style.display="none"
+//   // Artist_2.style.display="none"
+//   AtifMusic.style.display = "block";
+//   space.style.display = "none";
+//   async function Songs() {
+//     try {
+//       const response = await fetch(
+//         "https://vybbii-api-iu8p.onrender.com/songs"
+//       );
+//       const songs = await response.json();
 
-  function playSong(audiourl) {
-    songAudio.src = audiourl;
-    songAudio.load();
-    songAudio.play();
-  }
+//       // Attach click event to each existing h3 element
+//       // h3Elements.style.display="block"
+//       // div.style.display="inline"
+//       h3Elements.forEach((h3) => {
+//         const matchingSong = songs.find(
+//           (song) => song.title === h3.textContent.trim()
+//         );
 
-  // Initialize by fetching songs and setting up events
-  Songs();
-});
+//         // If a matching song is found, bind it to the click event
+//         if (matchingSong) {
+//           h3.addEventListener("click", () => playSong(matchingSong.audiourl));
+//         }
+//       });
+//     } catch (error) {
+//       console.error("Error fetching songs:", error);
+//     }
+//   }
+
+//   function playSong(audiourl) {
+//     songAudio.src = audiourl;
+//     songAudio.load();
+//     songAudio.play();
+//   }
+
+//   // Initialize by fetching songs and setting up events
+//   Songs();
+// });
+// Anirudh.addEventListener("click", () => {
+//   Artist_sec2.style.display = "none";
+//   Artist_sec3.style.display = "none";
+//   Album_Sec1.style.display = "none";
+//   Album_Sec2.style.display = "none";
+//   Album_Sec3.style.display = "none";
+//   Radio_Sec1.style.display = "none";
+//   Radio_Sec2.style.display = "none";
+//   Radio_Sec3.style.display = "none";
+//   Charts_Sec.style.display = "none";
+//   Editor_Sec.style.display = "none";
+//   space2.style.display = "none";
+//   space3.style.display = "none";
+//   space4.style.display = "none";
+//   space5.style.display = "none";
+//   // Arjit.style.display="none"
+//   Artist_1.style.display = "none";
+//   Artist_2.style.display = "none";
+//   Artist_3.style.display = "none";
+//   Artist_4.style.display = "none";
+//   Artist_5.style.display = "none";
+//   Artist_6.style.display = "none";
+//   Artist_7.style.display = "none";
+//   // Artist_2.style.display="none"
+//   // Artist_2.style.display="none"
+//   AnirudhMusic.style.display = "block";
+//   space.style.display = "none";
+//   async function Songs() {
+//     try {
+//       const response = await fetch(
+//         "https://vybbii-api-iu8p.onrender.com/songs"
+//       );
+//       const songs = await response.json();
+
+//       // Attach click event to each existing h3 element
+//       // h3Elements.style.display="block"
+//       // div.style.display="inline"
+//       h3Elements.forEach((h3) => {
+//         const matchingSong = songs.find(
+//           (song) => song.title === h3.textContent.trim()
+//         );
+
+//         // If a matching song is found, bind it to the click event
+//         if (matchingSong) {
+//           h3.addEventListener("click", () => playSong(matchingSong.audiourl));
+//         }
+//       });
+//     } catch (error) {
+//       console.error("Error fetching songs:", error);
+//     }
+//   }
+
+//   function playSong(audiourl) {
+//     songAudio.src = audiourl;
+//     songAudio.load();
+//     songAudio.play();
+//   }
+
+//   // Initialize by fetching songs and setting up events
+//   Songs();
+// });

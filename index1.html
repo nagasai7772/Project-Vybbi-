@@ -67,16 +67,11 @@
         </div>
       </div>
 
-      <!-- <a href=""></a> -->
-      <!-- <span class="user" id="USER">Welcome user</span> -->
       <div>
-        <!-- <i class="fa-regular fa-moon fa-lg" style="color: #e3e7ed;" id="dark" onclick=""></i> -->
         <button class="signup_btn" id="Signup_btn">Sign up</button
         ><button class="login_btn" id="Login_btn">Login</button>
       </div>
     </header>
-    <br />
-    
     <div id="Home_sec">
       <div class="side_section" id="Side_section">
         <div id="side_sec">
@@ -375,8 +370,40 @@
                 />Tu Hi Mera
               </h3>
               
-              <input type="range" name="" value="0" id="progress" />
-              
+              <!-- <input type="range" name="" value="0" id="progress" /> -->
+              <div class="song_time">
+                <span>
+                  <p id="currentTime">0:00</p>
+                  <!-- Current song time -->
+                </span>
+    
+                <input type="range" name="" value="0" id="progress" />
+    
+                <span>
+                  <p id="durationTime">0:00</p>
+                  <!-- Total song duration -->
+                </span>
+              </div>
+    
+              <div id="Music_controls">
+                <div id="backward" onclick="previousSong()">
+                  <i class="fa-solid fa-backward"></i>
+                </div>
+                <div id="playpause" onclick="playpause()">
+                  <i class="fa-solid fa-play" id="Ctrlicon"></i>
+                </div>
+                <div id="forward" onclick="nextSong()">
+                  <i class="fa-solid fa-forward"></i>
+                </div>
+                <div id="Loop" onclick="toggleLoop()">
+                  <i class="fa-solid fa-repeat"></i>
+                </div>
+                <div id="shuffle" onclick="toggleShuffle()">
+                  <i class="fa-solid fa-shuffle"></i>
+                </div>
+                <div ><i class="fa-solid fa-plus fa-lg" id="Addtolist"></i></div>
+              </div>
+            
             </div>
           </div>
           <div id="Artist_2">

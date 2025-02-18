@@ -1,41 +1,261 @@
-<!-- <!DOCTYPE html>
+ <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Song Player</title>
+    <script
+      src="https://kit.fontawesome.com/452bdfbb6f.js"
+      crossorigin="anonymous"
+    ></script>
 </head>
 <body>
+    <h3 id="bulleya">Bulleya</h3>
+    <h3 id="lehrado">Lehra Do</h3>
+    <h3 id="devadeva">Deva Deva</h3>
+    <h3 id="firstclass">First Class</h3>
+    <h3 id="tuhimera">Tu Hi Mera</h3>
+    <div class="song_time">
+        <span>
+          <p id="currentTime">0:00</p>
+          <!-- Current song time 
+        </span>
+
+        <input type="range" name="" value="0" id="progress" />
+
+        <span>
+          <p id="durationTime">0:00</p>
+          <!-- Total song duration -
+        </span>
+      </div>
+
+      <div id="Music_controls">
+        <div id="backward" onclick="previousSong()">
+          <i class="fa-solid fa-backward"></i>
+        </div>
+        <div id="playpause" onclick="playpause()">
+          <i class="fa-solid fa-play" id="Ctrlicon"></i>
+        </div>
+        <div id="forward" onclick="nextSong()">
+          <i class="fa-solid fa-forward"></i>
+        </div>
+        <div id="Loop" onclick="toggleLoop()">
+          <i class="fa-solid fa-repeat"></i>
+        </div>
+        <div id="shuffle" onclick="toggleShuffle()">
+          <i class="fa-solid fa-shuffle"></i>
+        </div>
+        <div ><i class="fa-solid fa-plus fa-lg" id="Addtolist"></i></div>
+      </div>
+    <button id="prev">Prev</button>
+    <button id="play">Play</button>
+    <button id="next">Next</button>
+    <progress id="progress" value="0" max="100"></progress>
+    <audio id="audio" controls></audio>
+
     <script>
-        async function name() 
-        {
-            let data=await fetch('https://vybbii-api-iu8p.onrender.com/songs')
-            let newdata=await data.json()
-            console.log(newdata);
-            
-            
-        }
-        name()
+        document.addEventListener("DOMContentLoaded", async () => {
+            const audio = document.getElementById("audio");
+            const progressBar = document.getElementById("progress");
+            const playBtn = document.getElementById("play");
+            const prevBtn = document.getElementById("prev");
+            const nextBtn = document.getElementById("next");
+
+            // Define the five specific song titles
+            const songTitles = ["Bulleya", "Lehra Do", "Deva Deva", "First Class", "Tu Hi Mera"];
+            let songs = [];
+            let currentSongIndex = 0;
+
+            async function fetchSongs() {
+                try {
+                    const response = await fetch("https://vybbii-api-iu8p.onrender.com/songs");
+                    const allSongs = await response.json();
+
+                    // Filter only the selected five songs
+                    songs = songTitles.map(title => allSongs.find(song => song.title === title)).filter(Boolean);
+
+                    // Attach click events to static H3 elements
+                    document.getElementById("bulleya").addEventListener("click", () => playSong(0));
+                    document.getElementById("lehrado").addEventListener("click", () => playSong(1));
+                    document.getElementById("devadeva").addEventListener("click", () => playSong(2));
+                    document.getElementById("firstclass").addEventListener("click", () => playSong(3));
+                    document.getElementById("tuhimera").addEventListener("click", () => playSong(4));
+
+                    // Play first song initially if available
+                    if (songs.length > 0) {
+                        playSong(0);
+                    }
+                } catch (error) {
+                    console.error("Error fetching songs:", error);
+                }
+            }
+
+            function playSong(index) {
+                if (songs.length === 0) return;
+                currentSongIndex = index;
+                audio.src = songs[currentSongIndex].audiourl;
+                audio.play();
+                playBtn.textContent = "Pause";
+            }
+
+            playBtn.addEventListener("click", () => {
+                if (audio.paused) {
+                    audio.play();
+                    playBtn.textContent = "Pause";
+                } else {
+                    audio.pause();
+                    playBtn.textContent = "Play";
+                }
+            });
+
+            prevBtn.addEventListener("click", () => {
+                currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+                playSong(currentSongIndex);
+            });
+
+            nextBtn.addEventListener("click", () => {
+                currentSongIndex = (currentSongIndex + 1) % songs.length;
+                playSong(currentSongIndex);
+            });
+
+            audio.addEventListener("timeupdate", () => {
+                if (!isNaN(audio.duration)) {
+                    progressBar.value = (audio.currentTime / audio.duration) * 100;
+                }
+            });
+
+            await fetchSongs();
+        });
     </script>
 </body>
-</html> -->
-<!DOCTYPE html>
+</html> 
+
+ -->
+
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Song Player</title>
+    <script src="https://kit.fontawesome.com/452bdfbb6f.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <a href="./Login.html">d</a>
-    <button>click</button>
+    <h3 id="bulleya">Bulleya</h3>
+    <h3 id="lehrado">Lehra Do</h3>
+    <h3 id="devadeva">Deva Deva</h3>
+    <h3 id="firstclass">First Class</h3>
+    <h3 id="tuhimera">Tu Hi Mera</h3>
+
+    <div class="song_time">
+        <span><p id="currentTime">0:00</p></span>
+        <input type="range" value="0" id="progress" />
+        <span><p id="durationTime">0:00</p></span>
+    </div>
+
+    <div id="Music_controls">
+        <div id="backward" onclick="previousSong()"><i class="fa-solid fa-backward"></i></div>
+        <div id="playpause" onclick="playPause()"><i class="fa-solid fa-play" id="Ctrlicon"></i></div>
+        <div id="forward" onclick="nextSong()"><i class="fa-solid fa-forward"></i></div>
+        <div id="Loop" onclick="toggleLoop()"><i class="fa-solid fa-repeat"></i></div>
+        <div id="shuffle" onclick="toggleShuffle()"><i class="fa-solid fa-shuffle"></i></div>
+    </div>
+
+    <audio id="audio"></audio>
+
     <script>
-        let btn=document.getElementsByTagName("button")
-        btn[0].addEventListener('click',()=>
-    {
-        window.open("./Login.html")
-    })
+        document.addEventListener("DOMContentLoaded", async () => {
+            const audio = document.getElementById("audio");
+            const progressBar = document.getElementById("progress");
+            const playIcon = document.getElementById("Ctrlicon");
+            const currentTimeDisplay = document.getElementById("currentTime");
+            const durationTimeDisplay = document.getElementById("durationTime");
+
+            const songTitles = ["Bulleya", "Lehra Do", "Deva Deva", "First Class", "Tu Hi Mera"];
+            let songs = [];
+            let currentSongIndex = 0;
+            let isLooping = false;
+            let isShuffling = false;
+
+            async function fetchSongs() {
+                try {
+                    const response = await fetch("https://vybbii-api-iu8p.onrender.com/songs");
+                    const allSongs = await response.json();
+                    songs = songTitles.map(title => allSongs.find(song => song.title === title)).filter(Boolean);
+
+                    if (songs.length > 0) {
+                        playSong(0);
+                    }
+                } catch (error) {
+                    console.error("Error fetching songs:", error);
+                }
+            }
+
+            function playSong(index) {
+                if (songs.length === 0) return;
+                currentSongIndex = index;
+                audio.src = songs[currentSongIndex].audiourl;
+                audio.play();
+                playIcon.classList.replace("fa-play", "fa-pause");
+            }
+
+            function playPause() {
+                if (audio.paused) {
+                    audio.play();
+                    playIcon.classList.replace("fa-play", "fa-pause");
+                } else {
+                    audio.pause();
+                    playIcon.classList.replace("fa-pause", "fa-play");
+                }
+            }
+
+            function previousSong() {
+                currentSongIndex = isShuffling ? Math.floor(Math.random() * songs.length) : (currentSongIndex - 1 + songs.length) % songs.length;
+                playSong(currentSongIndex);
+            }
+
+            function nextSong() {
+                currentSongIndex = isShuffling ? Math.floor(Math.random() * songs.length) : (currentSongIndex + 1) % songs.length;
+                playSong(currentSongIndex);
+            }
+
+            function toggleLoop() {
+                isLooping = !isLooping;
+                audio.loop = isLooping;
+                document.getElementById("Loop").classList.toggle("active", isLooping);
+            }
+
+            function toggleShuffle() {
+                isShuffling = !isShuffling;
+                document.getElementById("shuffle").classList.toggle("active", isShuffling);
+            }
+
+            audio.addEventListener("timeupdate", () => {
+                if (!isNaN(audio.duration)) {
+                    progressBar.value = (audio.currentTime / audio.duration) * 100;
+                    currentTimeDisplay.textContent = formatTime(audio.currentTime);
+                    durationTimeDisplay.textContent = formatTime(audio.duration);
+                }
+            });
+
+            progressBar.addEventListener("input", () => {
+                audio.currentTime = (progressBar.value / 100) * audio.duration;
+            });
+
+            function formatTime(seconds) {
+                const min = Math.floor(seconds / 60);
+                const sec = Math.floor(seconds % 60);
+                return `${min}:${sec < 10 ? "0" : ""}${sec}`;
+            }
+
+            document.getElementById("bulleya").addEventListener("click", () => playSong(0));
+            document.getElementById("lehrado").addEventListener("click", () => playSong(1));
+            document.getElementById("devadeva").addEventListener("click", () => playSong(2));
+            document.getElementById("firstclass").addEventListener("click", () => playSong(3));
+            document.getElementById("tuhimera").addEventListener("click", () => playSong(4));
+
+            await fetchSongs();
+        });
     </script>
-    
 </body>
 </html>
